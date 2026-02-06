@@ -11,80 +11,7 @@ const SEO = {
   ogImage: "https://images.unsplash.com/photo-1653645800971-b46f2322da3c?w=1200&auto=format&fit=crop&q=80",
 }
 
-const DESTINATIONS_MOCK = [
-  {
-    id: 1,
-    slug: "bwindi-impenetrable-forest",
-    name: "Bwindi Impenetrable Forest",
-    location: "Uganda",
-    shortDescription: "Home to nearly half the world's remaining mountain gorillas. Trek through misty ancient rainforest and spend an hour with a gorilla family in this UNESCO World Heritage Site.",
-    image: "https://images.unsplash.com/photo-1653645800971-b46f2322da3c?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 2,
-    slug: "murchison-falls",
-    name: "Murchison Falls National Park",
-    location: "Uganda",
-    shortDescription: "Where the Nile explodes through a narrow gorge. Game drives, boat safaris, and towering falls in Uganda's largest national park.",
-    image: "https://images.unsplash.com/photo-1704183683740-1400a49816b7?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 3,
-    slug: "queen-elizabeth",
-    name: "Queen Elizabeth National Park",
-    location: "Uganda",
-    shortDescription: "Tree-climbing lions, savanna, and Kazinga Channel boat cruises. A classic East African safari in the shadow of the Rwenzoris.",
-    image: "https://images.unsplash.com/photo-1518709368567-b22d4217b91f?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 4,
-    slug: "kidepo-valley",
-    name: "Kidepo Valley National Park",
-    location: "Uganda",
-    shortDescription: "Remote wilderness in Uganda's northeast. Vast plains, rare species, and some of Africa's most dramatic landscapes.",
-    image: "https://images.unsplash.com/photo-1553521306-9387d3795516?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 5,
-    slug: "masai-mara",
-    name: "Masai Mara National Reserve",
-    location: "Kenya",
-    shortDescription: "The stage for the Great Migration. Endless plains, big cats, and the iconic Maasai culture in Kenya's finest wildlife reserve.",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 6,
-    slug: "amboseli",
-    name: "Amboseli National Park",
-    location: "Kenya",
-    shortDescription: "Elephants with Kilimanjaro as backdrop. Open savanna and swamps draw wildlife and photographers year-round.",
-    image: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 7,
-    slug: "serengeti",
-    name: "Serengeti National Park",
-    location: "Tanzania",
-    shortDescription: "Vast savannas and the greatest wildlife spectacle on earth. The Serengeti defines the African safari.",
-    image: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 8,
-    slug: "ngorongoro",
-    name: "Ngorongoro Conservation Area",
-    location: "Tanzania",
-    shortDescription: "The world's largest intact volcanic caldera. Dense wildlife and the chance to see the Big Five in one day.",
-    image: "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 9,
-    slug: "volcanoes-national-park",
-    name: "Volcanoes National Park",
-    location: "Rwanda",
-    shortDescription: "Mountain gorilla trekking in the Virunga massif. The original setting for Dian Fossey's conservation work.",
-    image: "https://images.unsplash.com/photo-1614528767034-70de9fe166e0?w=500&auto=format&fit=crop&q=60",
-  },
-]
+import { destinations } from "../data/destinations"
 
 const COUNTRIES = ["All", "Uganda", "Kenya", "Tanzania", "Rwanda"]
 
@@ -118,8 +45,8 @@ export default function Destinations() {
   }
 
   const filteredDestinations = selectedCountry === "All"
-    ? DESTINATIONS_MOCK
-    : DESTINATIONS_MOCK.filter((dest) => dest.location === selectedCountry)
+    ? destinations
+    : destinations.filter((dest) => dest.location === selectedCountry)
 
   return (
     <div className="relative">

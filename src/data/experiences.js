@@ -524,8 +524,711 @@ export const experiences = [
             "Tips and gratuities"
         ],
         featured: false
+    },
+    {
+        id: 7,
+        slug: "samburu-northern-frontier",
+        title: "Samburu & Northern Frontier",
+        duration: "5 Days",
+        durationDays: 5,
+        startingPrice: 2800,
+        summary: "Explore Kenya's rugged northern frontier in Samburu National Reserve. Famous for its rare 'Special Five' species and rich Samburu culture.",
+        heroImage: "https://images.unsplash.com/photo-1615456950275-5743c3d52317?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1565355605260-a08091dd7192?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1600609842388-3e4b77d611b8?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "samburu-national-reserve",
+        country: "Kenya",
+        travelStyle: "Wildlife Safari",
+        highlights: [
+            "Samburu Special Five",
+            "Ewaso Ng'iro River",
+            "Leopards of Samburu",
+            "Cultural village visit",
+            "Stunning landscapes"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Nairobi to Samburu",
+                description: "Drive north past Mount Kenya to the arid lands of Samburu. Afternoon game drive introduction to the unique northern species.",
+                accommodation: "Ashnil Samburu Camp",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Discovering Rare Species",
+                description: "Full day game drives searching for the Special Five: Grevy's zebra, Somali ostrich, reticulated giraffe, gerenuk, and beisa oryx.",
+                accommodation: "Ashnil Samburu Camp",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "River Life & Culture",
+                description: "Morning safari along the river banks. Afternoon visit to a Samburu village to learn about their nomadic way of life.",
+                accommodation: "Ashnil Samburu Camp",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Buffalo Springs Reserve",
+                description: "Explore the neighboring Buffalo Springs reserve for a different perspective and swimming in the natural springs.",
+                accommodation: "Ashnil Samburu Camp",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 5,
+                title: "Return to Nairobi",
+                description: "Morning game drive en route to the exit. Drive back to Nairobi with lunch stop at Nanyuki.",
+                accommodation: null,
+                meals: "Breakfast, Lunch"
+            }
+        ],
+        included: [
+            "All park fees",
+            "Transport in 4x4 cruiser",
+            "Full board accommodation",
+            "Professional guide",
+            "Cultural visit",
+            "Water during safari"
+        ],
+        excluded: [
+            "Flights",
+            "Drinks",
+            "Tips",
+            "Personal items"
+        ],
+        featured: false
+    },
+    {
+        id: 8,
+        slug: "tsavo-coast-safari",
+        title: "Tsavo East & West Expedition",
+        duration: "6 Days",
+        durationDays: 6,
+        startingPrice: 2400,
+        summary: "A classic safari journey through the vast Tsavo ecosystems, visiting Mzima Springs, lava flows, and the red elephants of Tsavo East.",
+        heroImage: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1535940348721-e3745672cd50?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1469176378416-2495d4d3c631?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "tsavo-west",
+        country: "Kenya",
+        travelStyle: "Wildlife Safari",
+        highlights: [
+            "Mzima Springs underwater hippos",
+            "Shetani Lava Flow",
+            "Red elephants",
+            "Rhino sanctuary",
+            "Aruba Dam"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Nairobi to Tsavo West",
+                description: "Depart Nairobi for Tsavo West. Visit the spooky Shetani Lava Flow before checking into your lodge.",
+                accommodation: "Kilaguni Serena Lodge",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Mzima Springs & Rhinos",
+                description: "Morning visit to Mzima Springs to see hippos underwater. Afternoon game drive in the rhino sanctuary.",
+                accommodation: "Kilaguni Serena Lodge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Tsavo West to Tsavo East",
+                description: "Cross into the vast plains of Tsavo East. The landscape changes to red earth and open savannah.",
+                accommodation: "Ashnil Aruba Lodge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Red Elephants of Tsavo",
+                description: "Full day exploring Tsavo East. Look for the famous 'red elephants' dusted in the park's soil.",
+                accommodation: "Ashnil Aruba Lodge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 5,
+                title: "Galana River",
+                description: "Game drive along the Galana River, a lifeline for wildlife in this arid region. Optional walking safari.",
+                accommodation: "Ashnil Aruba Lodge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 6,
+                title: "Departure",
+                description: "Morning game drive. Transfer to Mombasa for a beach extension or back to Nairobi/Moi International Airport.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Park fees",
+            "Scanning and guiding",
+            "Accommodation and meals",
+            "Transport"
+        ],
+        excluded: [
+            "International flights",
+            "Tips",
+            "Drinks"
+        ],
+        featured: false
+    },
+    {
+        id: 9,
+        slug: "rift-valley-explorer",
+        title: "Great Rift Valley Explorer",
+        duration: "4 Days",
+        durationDays: 4,
+        startingPrice: 1600,
+        summary: "Discover the lakes of the Rift Valley. From the bird-rich Lake Nakuru and its rhinos to cycling through Hell's Gate and boat rides on Naivasha.",
+        heroImage: "https://images.unsplash.com/photo-1596708465064-a0f124c65207?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1565152399960-9d0847b7c2b6?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1506543730435-e2d1d8dc66db?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "lake-nakuru",
+        country: "Kenya",
+        travelStyle: "Family Safari",
+        highlights: [
+            "Rhinos in Nakuru",
+            "Cycling in Hell's Gate",
+            "Boat ride on Lake Naivasha",
+            "Walking safari"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Nairobi to Lake Nakuru",
+                description: "Short drive to Lake Nakuru. Afternoon game drive to see rhinos and (seasonally) flamingos.",
+                accommodation: "Sarova Lion Hill",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Nakuru to Naivasha",
+                description: "Morning game drive. Transfer to Lake Naivasha. Afternoon boat ride to see hippos and fish eagles.",
+                accommodation: "Enashipai Resort",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Hell's Gate Adventure",
+                description: "Walking or cycling safari in Hell's Gate National Park. Visit the spectacular gorge.",
+                accommodation: "Enashipai Resort",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Return to Nairobi",
+                description: "Leisurely breakfast. Drive back to Nairobi, arriving by lunch.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Park fees",
+            "Boat ride",
+            "Bike hire",
+            "Accommodation",
+            "Transport"
+        ],
+        excluded: [
+            "Tips",
+            "Personal expenses"
+        ],
+        featured: false
+    },
+    {
+        id: 10,
+        slug: "tarangire-manyara-gems",
+        title: "Tarangire & Manyara Secret Gems",
+        duration: "5 Days",
+        durationDays: 5,
+        startingPrice: 2200,
+        summary: "Experience the northern circuit's hidden wonders: the massive elephant herds of Tarangire and the tree-climbing lions of Lake Manyara.",
+        heroImage: "https://images.unsplash.com/photo-1582298539031-6e3e55139fb9?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1504543265780-4598eb2a66be?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1622323758656-b07c91353f86?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "tarangire",
+        country: "Tanzania",
+        travelStyle: "Wildlife Safari",
+        highlights: [
+            "Tarangire Elephants",
+            "Baobab landscapes",
+            "Tree-climbing lions",
+            "Manyara groundwater forest",
+            "Night game drive option"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arusha to Tarangire",
+                description: "Depart Arusha for Tarangire, the 'Elephant Playground'. Afternoon starts with baobabs and herds.",
+                accommodation: "Tarangire Safari Lodge",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Full Day Tarangire",
+                description: "Explore the Silale Swamp and river circuits. Incredible birdlife and predator action.",
+                accommodation: "Tarangire Safari Lodge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "To Lake Manyara",
+                description: "Short drive to Lake Manyara. Enter the groundwater forest, looking for blue monkeys and baboons.",
+                accommodation: "Kirurumu Manyara",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Manyara Lions & Flamingoes",
+                description: "Game drive along the lake shore. Look for famous tree-climbing lions and flocks of flamingoes.",
+                accommodation: "Kirurumu Manyara",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 5,
+                title: "Back to Arusha",
+                description: "Morning cultural visit to Mto wa Mbu village. Return to Arusha.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "All park fees",
+            "Vehicle and guide",
+            "Accommodation",
+            "Meals"
+        ],
+        excluded: [
+            "Tips",
+            "Drinks"
+        ],
+        featured: false
+    },
+    {
+        id: 11,
+        slug: "southern-tanzania-safari",
+        title: "Southern Tanzania River Safari",
+        duration: "8 Days",
+        durationDays: 8,
+        startingPrice: 4800,
+        summary: "Go off the beaten path to Nyerere (Selous) and Ruaha. Enjoy boat safaris, walking safaris, and huge predator populations in untamed wilderness.",
+        heroImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1563812543431-7e8c363d686f?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1564760290292-23341e4df6ec?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "selous-game-reserve",
+        country: "Tanzania",
+        travelStyle: "Wilderness Safari",
+        highlights: [
+            "River boat safari",
+            "Walking safari",
+            "Wild dogs",
+            "Fly camping",
+            "Remote landscapes"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Fly to Nyerere NP",
+                description: "Flight from Dar es Salaam to Nyerere (Selous). Afternoon boat safari on the Rufiji River.",
+                accommodation: "Siwandu Camp",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Walking & Game Drives",
+                description: "Morning walking safari to track animals on foot. Afternoon game drive in the reserve.",
+                accommodation: "Siwandu Camp",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Full Day Nyerere",
+                description: "Explore the deeper parts of the reserve. Excellent chance to see wild dogs.",
+                accommodation: "Siwandu Camp",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Fly to Ruaha",
+                description: "Light aircraft flight to Ruaha National Park. The landscape transforms to baobabs and hills.",
+                accommodation: "Jabali Ridge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 5,
+                title: "Ruaha Predators",
+                description: "Ruaha has 10% of the world's lions. Spend the day tracking large prides and huge buffalo herds.",
+                accommodation: "Jabali Ridge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 6,
+                title: "Ruaha Wilderness",
+                description: "Explore the Great Ruaha River. In the dry season, it is the only water source, attracting massive game concentrations.",
+                accommodation: "Jabali Ridge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 7,
+                title: "Remote Ruaha",
+                description: "Venture to remote sectors for complete isolation and raw nature.",
+                accommodation: "Jabali Ridge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 8,
+                title: "Return to Dar",
+                description: "Final morning game viewing. Flight back to Dar es Salaam.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Domestic flights",
+            "Park fees",
+            "Activities (Walks, Boat)",
+            "Luxury accommodation"
+        ],
+        excluded: [
+            "International flights",
+            "Premium drinks"
+        ],
+        featured: true
+    },
+    {
+        id: 12,
+        slug: "kilimanjaro-trek",
+        title: "Kilimanjaro Machame Trek",
+        duration: "7 Days",
+        durationDays: 7,
+        startingPrice: 2600,
+        summary: "Conquer the Roof of Africa via the scenic Machame Route. Experience five climate zones on your way to Uhuru Peak at 5,895m.",
+        heroImage: "https://images.unsplash.com/photo-1634628410298-5c029de7e01d?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1653645800971-b46f2322da3c?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1522883020614-368b6b033d64?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "kilimanjaro-national-park",
+        country: "Tanzania",
+        travelStyle: "Trekking",
+        highlights: [
+            "Uhuru Peak summit",
+            "Shira Plateau",
+            "Lava Tower",
+            "Barranco Wall",
+            "Sunrise on the roof of Africa"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Machame Gate to Machame Camp",
+                description: "Register at the gate. Trek through the rainforest zone to Machame Camp (3000m).",
+                accommodation: "Camping",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "To Shira Camp",
+                description: "Steep ascent leaving the forest for moorland. Views of Shira Plateau. Camp at 3840m.",
+                accommodation: "Camping",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Lava Tower to Barranco",
+                description: "Climb to Lava Tower (4600m) for acclimatization, then descend to Barranco Camp (3950m).",
+                accommodation: "Camping",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Barranco Wall to Karanga",
+                description: "Scramble up the Barranco Wall. Traverse to Karanga Camp (3995m).",
+                accommodation: "Camping",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 5,
+                title: "To Barafu Camp",
+                description: "Hike to Barafu Camp (4673m), the base for the summit push. Early dinner and rest.",
+                accommodation: "Camping",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 6,
+                title: "Summit & Descent",
+                description: "Midnight start. Reach Stella Point at dawn and Uhuru Peak (5895m) shortly after. Long descent to Mweka Camp.",
+                accommodation: "Camping",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 7,
+                title: "Mweka Gate",
+                description: "Final descent through rainforest. Receive summit certificates at the gate.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Park & camping fees",
+            "Guides & porters",
+            "Meals on mountain",
+            "Rescue fees"
+        ],
+        excluded: [
+            "Gear rental",
+            "Tips for crew (Mandatory)",
+            "Personal insurance"
+        ],
+        featured: false
+    },
+    {
+        id: 13,
+        slug: "akagera-big-five",
+        title: "Akagera Big Five Safari",
+        duration: "3 Days",
+        durationDays: 3,
+        startingPrice: 1500,
+        summary: "Discover Rwanda's savannah wilderness. Track lions, rhinos, and elephants in Akagera and enjoy a scenic boat cruise on Lake Ihema.",
+        heroImage: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1576487248795-0373df899539?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "akagera-national-park",
+        country: "Rwanda",
+        travelStyle: "Wildlife Safari",
+        highlights: [
+            "Big Five viewing",
+            "Boat cruise",
+            "Night game drive",
+            "Scenic wetland scenery"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Kigali to Akagera",
+                description: "Drive east to Akagera. Afternoon boat trip on Lake Ihema to see hippos and crocs.",
+                accommodation: "Ruzizi Tented Lodge",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "North to South Game Drive",
+                description: "Full day game drive heading to the exciting northern plains (Mutumba Hills) where wildlife density is highest.",
+                accommodation: "Ruzizi Tented Lodge",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Morning Drive & Return",
+                description: "Short morning game drive. Return to Kigali.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Park fees",
+            "Boat trip",
+            "Vehicle & Guide",
+            "Accommodation"
+        ],
+        excluded: [
+            "Tips",
+            "Drinks"
+        ],
+        featured: false
+    },
+    {
+        id: 14,
+        slug: "nyungwe-canopy-chimps",
+        title: "Nyungwe Primate & Canopy",
+        duration: "3 Days",
+        durationDays: 3,
+        startingPrice: 1200,
+        summary: "Immerse yourself in one of Africa's oldest rainforests. Trek chimps and walk high above the trees on the famous Canopy Walkway.",
+        heroImage: "https://images.unsplash.com/photo-1507646870237-7c3855938575?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1440557653017-487052528669?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1498642279262-d962058e586c?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "nyungwe-forest",
+        country: "Rwanda",
+        travelStyle: "Primate & Hiking",
+        highlights: [
+            "Chimpanzee trekking",
+            "Canopy Walkway",
+            "Tea plantations",
+            "Rainforest hikes"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Kigali to Nyungwe",
+                description: "Scenic drive through the hills to Nyungwe. Stop at the Royal Palace Museum en route.",
+                accommodation: "Nyungwe Top View",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Chimps & Canopy Walk",
+                description: "Morning chimp trek in the Cyamudongo forest. Afternoon canopy walk 60m above the forest floor.",
+                accommodation: "Nyungwe Top View",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Tea & Departure",
+                description: "Visit a tea plantation. Drive back to Kigali.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Permits (Chimp + Canopy)",
+            "Guide",
+            "Accommodation",
+            "Transport"
+        ],
+        excluded: [
+            "Tips",
+            "Personal items"
+        ],
+        featured: false
+    },
+    {
+        id: 15,
+        slug: "kibale-chimps-craters",
+        title: "Kibale Chimps & Crater Lakes",
+        duration: "4 Days",
+        durationDays: 4,
+        startingPrice: 1400,
+        summary: "Focus on primates in Kibale, the world's primate capital. Track chimps and explore the stunning crater lakes region.",
+        heroImage: "https://images.unsplash.com/photo-1544605058-297d266e744d?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1582298539031-6e3e55139fb9?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1585834925763-7c1527633633?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "kibale-national-park",
+        country: "Uganda",
+        travelStyle: "Primate Safari",
+        highlights: [
+            "Habituated Chimpanzee Trek",
+            "Bigodi Wetland",
+            "Crater Lake Hikes",
+            "Views of Rwenzoris"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Kampala to Kibale",
+                description: "Drive to Fort Portal and the crater lakes region. Views of the Rwenzori mountains.",
+                accommodation: "Turaco Treetops",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Chimpe Trekking",
+                description: "Morning chimp tracking. Afternoon Bigodi swamp walk to see other primates and birds.",
+                accommodation: "Turaco Treetops",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 3,
+                title: "Crater Lakes Hike",
+                description: "Guided hike through the crater lakes area, visiting 'Top of the World' viewpoint.",
+                accommodation: "Turaco Treetops",
+                meals: "Breakfast, Lunch, Dinner"
+            },
+            {
+                day: 4,
+                title: "Return to Kampala",
+                description: "Leisurely breakfast and drive back to Kampala/Entebbe.",
+                accommodation: null,
+                meals: "Breakfast"
+            }
+        ],
+        included: [
+            "Chimp permit",
+            "Nature walks",
+            "Accommodation",
+            "Transport"
+        ],
+        excluded: [
+            "Tips",
+            "Drinks"
+        ],
+        featured: false
+    },
+    {
+        id: 16,
+        slug: "wild-lake-mburo",
+        title: "Wildlife of Lake Mburo",
+        duration: "2 Days",
+        durationDays: 2,
+        startingPrice: 600,
+        summary: "A perfect short getaway to see zebras, giraffes, and impalas. Enjoy a walking safari and boat cruise in Uganda's smallest savannah park.",
+        heroImage: "https://images.unsplash.com/photo-1550155829-3738b5561a09?w=1200&auto=format&fit=crop&q=80",
+        gallery: [
+            "https://images.unsplash.com/photo-1518335043817-f58c7329759d?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1565355605260-a08091dd7192?w=800&auto=format&fit=crop&q=70"
+        ],
+        destination: "lake-mburo",
+        country: "Uganda",
+        travelStyle: "Short Safari",
+        highlights: [
+            "Walking safari",
+            "Zebras & Giraffes",
+            "Boat cruise",
+            "Equator stop"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Kampala to Mburo",
+                description: "Drive to Lake Mburo with a stop at the Equator. Afternoon boat cruise.",
+                accommodation: "Rwakobo Rock",
+                meals: "Lunch, Dinner"
+            },
+            {
+                day: 2,
+                title: "Morning Safari & Return",
+                description: "Early morning walking safari or game drive. Return to Kampala in the afternoon.",
+                accommodation: null,
+                meals: "Breakfast, Lunch"
+            }
+        ],
+        included: [
+            "Park fees",
+            "Activities",
+            "Accommodation",
+            "Transport"
+        ],
+        excluded: [
+            "Tips",
+            "Drinks"
+        ],
+        featured: false
     }
 ]
+
 
 /**
  * Get featured experiences

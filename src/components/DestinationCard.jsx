@@ -6,7 +6,10 @@ import { IoLocationOutline } from "react-icons/io5"
  * Clicking the card navigates to /destinations/:slug.
  */
 export default function DestinationCard({ destination }) {
-  const { id, slug, name, shortDescription, image, location } = destination
+  const { id, slug, name, description, images, location } = destination
+  
+  // Use the first image from the array, or a fallback if empty
+  const displayImage = images && images.length > 0 ? images[0] : ""
 
   return (
     <Link
@@ -17,7 +20,7 @@ export default function DestinationCard({ destination }) {
     >
       <div className="overflow-hidden aspect-4/3">
         <img
-          src={image}
+          src={displayImage}
           alt={name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
@@ -28,7 +31,7 @@ export default function DestinationCard({ destination }) {
           <span>{location}</span>
         </div>
         <h2 className="text-xl font-medium text-gray-900">{name}</h2>
-        <p className="text-gray-600 text-sm line-clamp-3 flex-1">{shortDescription}</p>
+        <p className="text-gray-600 text-sm line-clamp-3 flex-1">{description}</p>
         <span className="mt-2 flex items-center gap-2 text-sm font-medium text-[#3a5a40] self-start">
           View destination
           <IoLocationOutline size={16} />
