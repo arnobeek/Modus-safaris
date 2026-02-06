@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --font-ui: 'Nunito Sans', sans-serif;
+  --font-heading: 'Quicksand', sans-serif;
+  --font-editorial: 'Crimson Pro', serif;
+  --font-system: 'Arimo', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+@theme {
+  --font-ui: var(--font-ui);
+  --font-heading: var(--font-heading);
+  --font-editorial: var(--font-editorial);
+  --font-system: var(--font-system);
+  --font-body: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+
+button,
+input,
+select,
+textarea,
+.tab {
+  font-family: var(--font-ui);
+}
+
+.button-animation:hover {
+  animation: bg-slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes bg-slide-in {
+  0% {
+    background-color: whitesmoke;
+    color: black;
+  }
+
+  100% {
+    background-color: #3a5a40;
+    color: whitesmoke;
+    border: none;
+
+  }
+}
+
+.hero-image-home {
+  background-image: url('../src/assets/hero-image-home.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-image-destination {
+  background-image: url('../src/assets/heroimagedestination.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-image-experiences {
+  background-image: url('../src/assets/heroimageexperiences.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
