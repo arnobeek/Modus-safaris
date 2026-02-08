@@ -144,7 +144,7 @@ export default function Navbar() {
       >
         <Link to="/" className="flex items-center shrink-0" onClick={closeMenu}>
           <img src={logo} alt="Modus" className="w-12" />
-          <h1 className="text-2xl font-extrabold text-[#3a5a40]">MODUS</h1>
+          <h1 className="text-2xl font-extrabold text-[#3a5a40]">MODUS SAFARIS</h1>
         </Link>
 
         <nav className="hidden md:flex justify-between gap-8 lg:gap-12">
