@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { Helmet } from "react-helmet-async"
 import { useState } from "react"
 import Footer from "../components/Footer"
+import { destinations } from "../data/destinations"
 import { getExperienceBySlug, getExperiencesByCountry } from "../data/experiences"
 import ExperienceCard from "../components/ExperienceCard"
 import { HiOutlineCalendar, HiOutlineCurrencyDollar, HiOutlineCheck, HiOutlineX, HiChevronDown } from "react-icons/hi"
@@ -52,8 +53,8 @@ function ItineraryDay({ day, isLast }) {
 }
 
 export default function ExperienceDetail() {
-  const { slug } = useParams()
-  const experience = getExperienceBySlug(slug)
+  const { countrySlug, slug, experienceSlug } = useParams()
+  const experience = getExperienceBySlug(experienceSlug)
 
   if (!experience) {
     return (
@@ -79,12 +80,15 @@ export default function ExperienceDetail() {
     )
   }
 
+  // Find destination name for breadcrumbs
+  const destination = destinations.find(d => d.slug === experience.destination)
+
   const relatedExperiences = getExperiencesByCountry(experience.country)
-    .filter((exp) => exp.slug !== slug)
+    .filter((exp) => exp.slug !== experienceSlug) // Changed slug to experienceSlug
     .slice(0, 2)
 
-  const seoTitle = `${experience.title} | ${experience.duration} Safari | Modus Safaris`
-  const seoDescription = `${experience.summary.substring(0, 155)}...`
+  const seoTitle = `${experience.title} | ${experience.country} Safari | Modus Safaris`
+  const seoDescription = `${experience.summary.substring(0, 155)}...` // Kept original substring logic
 
   return (
     <div>
@@ -100,18 +104,29 @@ export default function ExperienceDetail() {
 
       {/* Hero */}
       <header
-        className="text-white flex flex-col gap-4 justify-end min-h-[60vh] md:min-h-[70vh] px-6 md:px-10 pb-12 relative"
+        className="text-white flex flex-col gap-5 justify-center min-h-[60vh] md:min-h-[70vh] px-6 md:px-10 relative"
         style={{
-          backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2)), url(${experience.heroImage})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(${experience.heroImage || "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200"})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="flex items-center gap-2">
-          <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
-          <p className="text-sm tracking-widest">{experience.country.toUpperCase()}</p>
+        <div className="flex flex-col gap-2">
+          <nav className="flex items-center gap-2 text-white/90 text-xs md:text-sm tracking-widest uppercase mb-4 overflow-x-auto whitespace-nowrap py-2">
+            <Link to="/destinations" className="hover:text-white transition-colors">Destinations</Link>
+            <span>/</span>
+            <Link to={`/destinations/${countrySlug}`} className="hover:text-white transition-colors">{experience.country}</Link>
+            <span>/</span>
+            <Link to={`/destinations/${countrySlug}/${slug}`} className="hover:text-white transition-colors">{destination?.name || experience.destination}</Link>
+          </nav>
+          <div className="flex items-center gap-2">
+            <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+              {experience.title}
+            </h1>
+          </div>
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium">{experience.title}</h1>
         <div className="flex flex-wrap items-center gap-4 md:gap-6 pt-2">
           <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
             <HiOutlineCalendar className="w-5 h-5" />
@@ -181,6 +196,9 @@ export default function ExperienceDetail() {
                         alt={`${experience.title} - Image ${index + 1}`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         loading="lazy"
+                        onError={(e) => {
+                          e.target.src = "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800"
+                        }}
                       />
                     </div>
                   ))}

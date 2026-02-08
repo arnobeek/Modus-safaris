@@ -1,18 +1,24 @@
 import { Link } from "react-router-dom"
 
 export default function ExperienceCard({ experience }) {
-  const { slug, title, duration, startingPrice, summary, heroImage, country, travelStyle } = experience
+  const { slug, title, duration, startingPrice, summary, heroImage, country, destination, travelStyle } = experience
+  
+  const countrySlug = country.toLowerCase()
+  const destSlug = destination
 
   return (
     <article className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-      <Link to={`/experiences/${slug}`} className="block">
+      <Link to={`/destinations/${countrySlug}/${destSlug}/${slug}`} className="block">
         {/* Image */}
         <div className="relative overflow-hidden aspect-[4/3]">
           <img
-            src={heroImage}
+            src={heroImage || "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70"}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
+            onError={(e) => {
+              e.target.src = "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70"
+            }}
           />
           {/* Duration badge */}
           <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">

@@ -128,26 +128,46 @@ export default function Home() {
       </Helmet>
 
       {/* Hero */}
-      <div className="flex justify-center min-h-screen md:min-h-[110vh] hero-image-home">
-        <div className="flex flex-col justify-center text-white items-center w-full max-w-4xl px-4 sm:px-6 md:px-8 text-center">
-          <h1 className="font-medium text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-center leading-tight">
+      <div className="relative flex justify-center min-h-screen md:min-h-[110vh] overflow-hidden bg-black">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="https://res.cloudinary.com/dv093jd0o/video/upload/so_0,f_auto,q_auto,w_1280/v1770402674/10-Greetings_No_Subs_itmpri.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source 
+            src="https://res.cloudinary.com/dv093jd0o/video/upload/v1770467253/0206_1_vreeki.mp4" 
+            type="video/mp4" 
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay for contrast */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        <div className="relative z-10 flex flex-col justify-center text-white items-center w-full max-w-4xl px-4 sm:px-6 md:px-8 text-center">
+          <h1 className="font-medium text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 text-center leading-tight drop-shadow-lg">
             East Africa, Re-imagined
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide font-light">
-            Discover Uganda, Travel with Purpose
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide font-light drop-shadow-md">
+            Discover East Africa, Travel with Purpose
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12">
             <Link
               to="/booking"
-              className="px-8 py-3 bg-[#3a5a40] text-white font-medium shadow hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 bg-[#3a5a40] text-white font-bold rounded-full shadow-xl hover:bg-[#2d4632] hover:scale-105 hover:shadow-2xl transition-all duration-300 active:scale-95"
             >
               Plan Your Trip
             </Link>
             <Link
-              to="/experiences"
-              className="px-8 py-3 bg-white/20 backdrop-blur-sm text-white font-medium hover:bg-white/30 transition-all duration-300"
+              to="/destinations"
+              className="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/30 hover:bg-white/20 transition-all duration-300 active:scale-95"
             >
-              Explore Experiences
+              Explore Destinations
             </Link>
           </div>
         </div>
@@ -221,7 +241,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              to="/experiences"
+              to="/destinations"
               className="text-[#3a5a40] font-medium hover:underline flex items-center gap-2"
             >
               View All Experiences <span>&rarr;</span>

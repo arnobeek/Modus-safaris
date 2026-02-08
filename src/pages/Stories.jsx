@@ -67,7 +67,7 @@ export default function Stories() {
       </Helmet>
 
       {/* Hero */}
-      <header className="text-white flex flex-col gap-5 justify-center min-h-[60vh] md:min-h-[70vh] px-6 md:px-10 hero-image-experiences">
+      <header className="text-white flex flex-col justify-center min-h-[50vh] md:min-h-[80vh] px-6 md:px-10 hero-image-experiences">
         <div className="flex items-center gap-2">
             <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
             <p className="text-sm tracking-widest uppercase">Traveler Stories</p>

@@ -79,7 +79,7 @@ export default function Experiences() {
             {/* Gorilla & Chimpanzee Tracking */}
             <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-100 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-medium text-[#3a5a40] mb-4 flex items-center gap-2">
-                <span className="text-2xl">🦍</span> Gorilla & Chimpanzee Tracking
+                Gorilla & Chimpanzee Tracking
               </h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -100,7 +100,7 @@ export default function Experiences() {
             {/* Wildlife & Big Game Safaris */}
             <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-100 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-medium text-[#3a5a40] mb-4 flex items-center gap-2">
-                <span className="text-2xl">🦓</span> Wildlife & Big Game Safaris
+                Wildlife & Big Game Safaris
               </h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -125,7 +125,7 @@ export default function Experiences() {
             {/* Cultural & Community-Based Tourism */}
             <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-100 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-medium text-[#3a5a40] mb-4 flex items-center gap-2">
-                <span className="text-2xl">🌿</span> Cultural & Community
+                Cultural & Community
               </h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -150,7 +150,7 @@ export default function Experiences() {
             {/* Adventure & Nature Experiences */}
             <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-100 hover:shadow-lg transition-shadow">
               <h3 className="text-xl font-medium text-[#3a5a40] mb-4 flex items-center gap-2">
-                <span className="text-2xl">🚙</span> Adventure & Nature
+                Adventure & Nature
               </h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
@@ -175,7 +175,7 @@ export default function Experiences() {
             {/* Tailor-Made & Luxury Safaris */}
             <div className="bg-zinc-50 p-6 rounded-xl border border-zinc-100 hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
               <h3 className="text-xl font-medium text-[#3a5a40] mb-4 flex items-center gap-2">
-                <span className="text-2xl">✨</span> Tailor-Made & Luxury
+                Tailor-Made & Luxury
               </h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">

@@ -7,7 +7,6 @@ const COUNTRIES = ["Uganda", "Kenya", "Tanzania", "Rwanda"]
 
 const navLinks = [
   { to: "/destinations", label: "DESTINATIONS", hasDropdown: true },
-  { to: "/experiences", label: "EXPERIENCES" },
   { to: "/stories", label: "STORIES" },
   { to: "/sustainability", label: "SUSTAINABILITY" },
   { to: "/about", label: "ABOUT" },
@@ -28,7 +27,7 @@ function DestinationsDropdown({ onNavigate }) {
         {COUNTRIES.map((country) => (
           <Link
             key={country}
-            to={`/destinations?country=${encodeURIComponent(country)}`}
+            to={`/destinations/${country.toLowerCase()}`}
             onClick={onNavigate}
             className="block px-5 py-2.5 text-sm text-gray-600 hover:bg-[#3a5a40]/10 hover:text-[#3a5a40] transition-colors"
           >
@@ -159,7 +158,7 @@ export default function Navbar() {
             to="/booking"
             className="border border-[#3a5a40] px-6 py-2 hover:cursor-pointer hover:shadow-lg text-lg font-medium transition-all button-animation inline-block"
           >
-            PLAN YOUR JOURNEY
+            MAKE INQUIRY
           </Link>
         </div>
 

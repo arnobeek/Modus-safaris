@@ -53,25 +53,25 @@ const INITIATIVES = [
     title: "Gorilla Conservation Fund",
     description:
       "Supporting mountain gorilla veterinary care, ranger salaries, and habitat protection in Bwindi Impenetrable Forest.",
-    image: "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=600&auto=format&fit=crop&q=60",
+    image: "https://images.unsplash.com/photo-1723036123249-1955f57f6d8c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fEdvcmlsbGElMjBDb25zZXJ2YXRpb24lMjBGdW5kfGVufDB8fDB8fHww",
   },
   {
     title: "Community Schools Project",
     description:
-      "Building and supplying primary schools in villages near national parks, giving children access to education.",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&auto=format&fit=crop&q=60",
+      "Supplying primary schools in villages near national parks, giving children access to education.",
+    image: "https://images.unsplash.com/photo-1567057420215-0afa9aa9253a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFmcmljYW4lMjBjaGlsZHJlbnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     title: "Women's Craft Cooperative",
     description:
       "Partnering with women's groups who create traditional crafts, providing sustainable income for families.",
-    image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1ef4d?w=600&auto=format&fit=crop&q=60",
+    image: "https://images.unsplash.com/photo-1612353312154-a7aae0a0a998?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWdhbmRhJTIwY3JhZnRzfGVufDB8fDB8fHww",
   },
   {
     title: "Reforestation Initiative",
     description:
       "Planting native trees in buffer zones around protected areas to expand wildlife corridors.",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&auto=format&fit=crop&q=60",
+    image: "https://images.unsplash.com/photo-1637552481611-1f36222fb188?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UmVmb3Jlc3RhdGlvbiUyMEluaXRpYXRpdmV8ZW58MHx8MHx8fDA%3D",
   },
 ]
 
@@ -89,7 +89,7 @@ export default function Sustainability() {
       </Helmet>
 
       {/* Hero */}
-      <header className="text-white flex flex-col gap-5 justify-center min-h-[60vh] md:min-h-[70vh] px-6 md:px-10 hero-image-destination">
+      <header className="text-white flex flex-col gap-5 justify-center min-h-[50vh] md:min-h-[80vh] px-6 md:px-10 hero-image-sustainability">
         <div className="flex items-center gap-2">
           <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
           <p className="text-sm tracking-widest">TRAVEL WITH PURPOSE</p>
@@ -162,9 +162,12 @@ export default function Sustainability() {
               >
                 <div className="h-64 overflow-hidden">
                     <img 
-                        src={initiative.image} 
+                        src={initiative.image || "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70"} 
                         alt={initiative.title} 
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.target.src = "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70"
+                        }}
                     />
                 </div>
                 <div className="p-8 border-l-4 border-[#3a5a40] flex flex-col gap-3">

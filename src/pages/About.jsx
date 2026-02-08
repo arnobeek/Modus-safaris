@@ -70,7 +70,7 @@ export default function About(){
             </Helmet>
 
             {/* Hero */}
-            <header className="text-white flex flex-col gap-5 justify-center min-h-[60vh] md:min-h-[70vh] px-6 md:px-10 hero-image-destination">
+            <header className="text-white flex flex-col gap-5 justify-center min-h-[50vh] md:min-h-[80vh] px-6 md:px-10 hero-image-about">
                 <div className="flex items-center gap-2">
                     <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
                     <p className="text-sm tracking-widest uppercase">Who We Are</p>
@@ -123,6 +123,9 @@ export default function About(){
                                     src="https://images.unsplash.com/photo-1761976671459-8a27e6b78c09?w=800&auto=format&fit=crop&q=80"
                                     alt="Safari landscape"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                    onError={(e) => {
+                                      e.target.src = "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800"
+                                    }}
                                 />
                             </div>
                         </div>
@@ -138,6 +141,9 @@ export default function About(){
                             src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=80" 
                             alt="Elephant in the wild" 
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+                            onError={(e) => {
+                              e.target.src = "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800"
+                            }}
                         />
                     </div>
                     <div className="flex flex-col gap-6 order-1 lg:order-2">

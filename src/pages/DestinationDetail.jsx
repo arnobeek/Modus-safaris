@@ -7,7 +7,7 @@ import { getExperienceBySlug } from "../data/experiences"
 import ExperienceCard from "../components/ExperienceCard"
 
 export default function DestinationDetail() {
-  const { slug } = useParams()
+  const { countrySlug, slug } = useParams()
   const destination = destinations.find((d) => d.slug === slug)
 
   if (!destination) {
@@ -23,10 +23,10 @@ export default function DestinationDetail() {
             The destination you're looking for doesn't exist. Explore our available safari destinations.
           </p>
           <Link
-            to="/destinations"
+            to={`/destinations/${countrySlug || "uganda"}`}
             className="px-6 py-3 bg-[#3a5a40] shadow text-white font-medium hover:scale-105 transition-all duration-300"
           >
-            View all destinations
+            Back to {countrySlug || "destinations"}
           </Link>
         </div>
         <Footer />
@@ -37,11 +37,6 @@ export default function DestinationDetail() {
   const heroImage = destination.images[0]
   const galleryImages = destination.images.slice(1)
   
-  // Get related experiences
-  const relatedExperiences = (destination.relatedExperiences || [])
-    .map((expSlug) => getExperienceBySlug(expSlug))
-    .filter(Boolean)
-
   const seoTitle = `${destination.name} | ${destination.location} Safari | Modus Safaris`
   const seoDescription = `${destination.description.substring(0, 155)}...`
 
@@ -60,40 +55,43 @@ export default function DestinationDetail() {
       <header
         className="text-white flex flex-col gap-5 justify-center min-h-[60vh] md:min-h-[70vh] px-6 md:px-10 relative"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(${heroImage || "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200"})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="flex items-center gap-2">
-          <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
-          <p className="text-sm tracking-widest">{destination.location.toUpperCase()}</p>
+        <div className="flex flex-col gap-2">
+          <Link 
+            to={`/destinations/${countrySlug}`} 
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm tracking-widest uppercase mb-2"
+          >
+            <span>&larr;</span> {destination.location}
+          </Link>
+          <div className="flex items-center gap-2">
+            <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium">{destination.name}</h1>
+          </div>
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium">{destination.name}</h1>
       </header>
 
       {/* In-page section navigation */}
       <div className="sticky top-16 z-30 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div className="px-4 sm:px-6 md:px-12 lg:px-20">
           <nav className="mx-auto max-w-4xl flex gap-10 overflow-x-auto py-5 text-sm tracking-widest md:gap-0 md:justify-between">
-            <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap" href="#overview">
+            <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap font-medium" href="#overview">
               OVERVIEW
             </a>
-            <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap" href="#accommodation">
+            <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap font-medium" href="#accommodation">
               ACCOMMODATION
             </a>
-            <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap" href="#activities">
+            <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap font-medium" href="#activities">
               ACTIVITIES
             </a>
-            {relatedExperiences.length > 0 && (
-              <a className="text-gray-800 hover:text-[#3a5a40] whitespace-nowrap" href="#experiences">
-                EXPERIENCES
-              </a>
-            )}
           </nav>
         </div>
       </div>
+
 
       <div className="px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-16 bg-white">
         <div className="mx-auto max-w-4xl">
@@ -120,15 +118,6 @@ export default function DestinationDetail() {
                 </li>
               ))}
             </ul>
-
-            <div className="flex justify-center md:justify-start">
-              <Link
-                to={`/booking?destination=${encodeURIComponent(destination.slug)}`}
-                className="px-8 py-3 bg-[#3a5a40] text-white font-medium shadow hover:scale-105 transition-all duration-300"
-              >
-                Book Journey
-              </Link>
-            </div>
           </section>
 
           <hr className="my-14 border-gray-200" />
@@ -210,40 +199,11 @@ export default function DestinationDetail() {
                     src={image}
                     alt={`${destination.name} - Image ${index + 2}`}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.src = "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800"
+                    }}
                   />
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Related Experiences */}
-      {relatedExperiences.length > 0 && (
-        <div id="experiences" className="px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-16 bg-white scroll-mt-28">
-          <div className="mx-auto max-w-6xl">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-                  <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
-                    Experiences
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-medium text-gray-900">
-                  Safari Itineraries in {destination.name}
-                </h2>
-              </div>
-              <Link
-                to="/experiences"
-                className="text-[#3a5a40] font-medium hover:underline flex items-center gap-2"
-              >
-                View All Experiences <span>&rarr;</span>
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {relatedExperiences.map((experience) => (
-                <ExperienceCard key={experience.id} experience={experience} />
               ))}
             </div>
           </div>

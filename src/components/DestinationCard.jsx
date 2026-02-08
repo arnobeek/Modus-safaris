@@ -9,11 +9,13 @@ export default function DestinationCard({ destination }) {
   const { id, slug, name, description, images, location } = destination
   
   // Use the first image from the array, or a fallback if empty
-  const displayImage = images && images.length > 0 ? images[0] : ""
+  const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&auto=format&fit=crop&q=70"
+  const displayImage = (images && images.length > 0) ? images[0] : (destination.image || FALLBACK_IMAGE)
+  const countrySlug = location ? location.toLowerCase() : "unknown"
 
   return (
     <Link
-      to={`/destinations/${slug}`}
+      to={`/destinations/${countrySlug}/${slug}`}
       className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 no-underline text-inherit"
       data-destination-id={id}
       data-destination-slug={slug}
@@ -23,6 +25,9 @@ export default function DestinationCard({ destination }) {
           src={displayImage}
           alt={name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          onError={(e) => {
+            e.target.src = FALLBACK_IMAGE
+          }}
         />
       </div>
       <div className="flex flex-col gap-2 p-5 flex-1">

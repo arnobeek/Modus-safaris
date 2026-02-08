@@ -5,17 +5,21 @@
 
 export function FormField({ id, label, error, children, required }) {
   return (
-    <div className="flex flex-col gap-2 w-full">
-      <label
-        htmlFor={id}
-        className="text-gray-600 text-sm font-medium tracking-wide uppercase"
-      >
-        {label}
-        {required && <span className="text-[#3a5a40] ml-0.5">*</span>}
-      </label>
-      {children}
+    <div className="flex flex-col gap-2.5 w-full group">
+      {label && (
+        <label
+          htmlFor={id}
+          className="text-zinc-500 text-[11px] font-bold tracking-[0.1em] uppercase transition-colors group-focus-within:text-[#3a5a40]"
+        >
+          {label}
+          {required && <span className="text-[#3a5a40] ml-1">*</span>}
+        </label>
+      )}
+      <div className="relative">
+        {children}
+      </div>
       {error && (
-        <p id={id ? `${id}-error` : undefined} className="text-sm text-red-600" role="alert">
+        <p id={id ? `${id}-error` : undefined} className="text-xs text-red-500 mt-1 font-medium animate-in fade-in slide-in-from-top-1 duration-200" role="alert">
           {error}
         </p>
       )}
@@ -24,7 +28,7 @@ export function FormField({ id, label, error, children, required }) {
 }
 
 const inputBase =
-  "w-full px-0 py-2.5 bg-transparent text-gray-900 placeholder-gray-400 border-0 border-b border-gray-300 focus:border-[#3a5a40] focus:outline-none transition-colors duration-200"
+  "w-full px-0 py-3 bg-transparent text-gray-900 placeholder-gray-400 border-0 border-b-2 border-zinc-100 focus:border-[#3a5a40] focus:outline-none transition-all duration-300 ease-in-out text-lg"
 
 export function FormInput({
   id,
@@ -89,5 +93,54 @@ export function FormTextarea({
         {...props}
       />
     </FormField>
+  )
+}
+
+export function FormCheckboxGroup({ label, error, children, required, columns = "grid-cols-2" }) {
+  return (
+    <div className="flex flex-col gap-4 w-full">
+      <div className="flex items-center gap-2">
+        <label className="text-gray-600 text-sm font-medium tracking-wide uppercase">
+          {label}
+          {required && <span className="text-[#3a5a40] ml-0.5">*</span>}
+        </label>
+      </div>
+      <div className={`grid gap-3 ${columns} sm:grid-cols-2 md:grid-cols-3 lg:${columns}`}>
+        {children}
+      </div>
+      {error && (
+        <p className="text-sm text-red-600" role="alert">
+          {error}
+        </p>
+      )}
+    </div>
+  )
+}
+
+export function CheckboxButton({ id, name, value, label, checked, onChange, type = "checkbox" }) {
+  return (
+    <label
+      className={`
+        relative flex items-center justify-center px-6 py-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 text-center text-[15px] font-semibold
+        ${checked 
+          ? "border-[#3a5a40] bg-[#3a5a40]/5 text-[#3a5a40] shadow-[0_8px_20px_-8px_rgba(58,90,64,0.3)] ring-1 ring-[#3a5a40]" 
+          : "border-zinc-100 bg-white text-zinc-500 hover:border-zinc-200 hover:bg-zinc-50 hover:text-zinc-700 shadow-sm"}
+        active:scale-[0.98]
+      `}
+    >
+      <input
+        type={type}
+        id={id}
+        name={name}
+        value={value}
+        checked={checked}
+        onChange={onChange}
+        className="sr-only"
+      />
+      <span className="relative z-10">{label}</span>
+      {checked && (
+        <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#3a5a40] animate-pulse" />
+      )}
+    </label>
   )
 }

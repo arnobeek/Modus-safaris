@@ -55,22 +55,28 @@ textarea,
   }
 }
 
-.hero-image-home {
-  background-image: url('../src/assets/hero-image-home.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .hero-image-destination {
-  background-image: url('../src/assets/heroimagedestination.jpg');
+  background-image: url('https://res.cloudinary.com/dv093jd0o/image/upload/v1770469705/christopher-sardegna-iRyGmA_no2Q-unsplash_ot4iwn.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .hero-image-experiences {
-  background-image: url('../src/assets/heroimageexperiences.jpg');
+  background-image: url('https://res.cloudinary.com/dv093jd0o/image/upload/v1770469002/damian-patkowski-T-LfvX-7IVg-unsplash_1_ogqc1y.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-image-about {
+  background-image: url('https://res.cloudinary.com/dv093jd0o/image/upload/v1770468550/TTP23Bandas-2_evsob6.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-image-sustainability {
+  background-image: url('https://res.cloudinary.com/dv093jd0o/image/upload/v1770469835/markus-spiske-ZSZ6wzNU12Q-unsplash_jre6dr.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

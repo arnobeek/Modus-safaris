@@ -1,78 +1,42 @@
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import ProgressIndicator from "./ProgressIndicator"
-import { FormInput, FormSelect, FormTextarea } from "./FormField"
+import { FormInput, FormCheckboxGroup, CheckboxButton, FormTextarea } from "./FormField"
 import { experiences, getExperienceBySlug } from "../data/experiences"
 import { sendBookingData } from "../services/emailService"
-
-const GUEST_OPTIONS = [
-  { value: "", label: "Select number" },
-  ...Array.from({ length: 10 }, (_, i) => ({ value: String(i + 1), label: String(i + 1) })),
-  { value: "11+", label: "11+" },
-]
-
-const COUNTRY_OPTIONS = [
-  { value: "", label: "Select country" },
-  { value: "US", label: "United States" },
-  { value: "UK", label: "United Kingdom" },
-  { value: "CA", label: "Canada" },
-  { value: "AU", label: "Australia" },
-  { value: "DE", label: "Germany" },
-  { value: "FR", label: "France" },
-  { value: "NL", label: "Netherlands" },
-  { value: "ZA", label: "South Africa" },
-  { value: "KE", label: "Kenya" },
-  { value: "UG", label: "Uganda" },
-  { value: "Other", label: "Other" },
-]
-
-const BUDGET_OPTIONS = [
-  { value: "", label: "Select budget range" },
-  { value: "2000-5000", label: "USD $2,000 - $5,000" },
-  { value: "5000-10000", label: "USD $5,000 - $10,000" },
-  { value: "10000-15000", label: "USD $10,000 - $15,000" },
-  { value: "15000-25000", label: "USD $15,000 - $25,000" },
-  { value: "25000+", label: "Higher than USD $25,000" },
-]
-
-const ACCOMMODATION_OPTIONS = [
-  { value: "", label: "Select preference" },
-  { value: "luxury", label: "Luxury (5-star lodges & camps)" },
-  { value: "midrange", label: "Mid-range (Comfortable lodges)" },
-  { value: "budget", label: "Budget-friendly" },
-  { value: "mixed", label: "Mix of options" },
-]
-
-function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-}
-
-function validatePhone(phone) {
-  return /^[\d\s\-+()]{8,20}$/.test(phone.replace(/\s/g, ""))
-}
+import { 
+  IoTimeOutline, 
+  IoCalendarOutline, 
+  IoHeartOutline, 
+  IoMapOutline, 
+  IoPeopleOutline, 
+  IoPersonAddOutline, 
+  IoCashOutline, 
+  IoCreateOutline 
+} from "react-icons/io5"
 
 export default function BookingForm() {
   const [searchParams] = useSearchParams()
   const experienceFromUrl = searchParams.get("experience") || ""
 
-  const [currentStep, setCurrentStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState("")
+  const [activeStep, setActiveStep] = useState(1)
 
   const [form, setForm] = useState({
-    // Step 1
-    experience: "",
-    travelDates: "",
-    numberOfTravelers: "",
-    // Step 2
+    duration: "",
+    years: [],
+    months: [],
+    experiences: [],
+    countries: [],
+    travelingWith: "",
+    adults: "",
+    children: "",
+    budget: "",
     fullName: "",
     email: "",
     phone: "",
-    country: "",
-    // Step 3
-    budget: "",
-    accommodation: "",
+    nationality: "",
     notes: "",
   })
 
@@ -83,442 +47,527 @@ export default function BookingForm() {
     if (experienceFromUrl) {
       const exp = getExperienceBySlug(experienceFromUrl)
       if (exp) {
-        setForm((prev) => ({ ...prev, experience: experienceFromUrl }))
+        setForm((prev) => ({ 
+          ...prev, 
+          experiences: [exp.title],
+          countries: [exp.country] 
+        }))
+        // Automatically reveal more steps if data is pre-filled
+        setActiveStep(4)
       }
     }
   }, [experienceFromUrl])
 
-  const updateField = (name, value) => {
-    setForm((prev) => ({ ...prev, [name]: value }))
-    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
+  const toggleArrayItem = (field, value) => {
+    setForm((prev) => {
+      const current = prev[field]
+      const updated = current.includes(value)
+        ? current.filter((item) => item !== value)
+        : [...current, value]
+      return { ...prev, [field]: updated }
+    })
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }))
+  }
+
+  const updateField = (field, value) => {
+    setForm((prev) => ({ ...prev, [field]: value }))
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }))
     if (submitError) setSubmitError("")
   }
 
-  const validateStep = (step) => {
+  const validate = () => {
     const newErrors = {}
-
-    if (step === 1) {
-      if (!form.experience) newErrors.experience = "Please select an experience"
-      if (!form.travelDates.trim()) newErrors.travelDates = "Travel dates are required"
-      if (!form.numberOfTravelers) newErrors.numberOfTravelers = "Please select number of travelers"
+    if (!form.duration) newErrors.duration = "Please select travel duration"
+    if (form.years.length === 0) newErrors.year = "Please select a year"
+    if (form.months.length === 0) newErrors.month = "Please select at least one month"
+    if (form.experiences.length === 0) newErrors.experiences = "Please select at least one experience"
+    if (form.countries.length === 0) newErrors.countries = "Please select a country"
+    if (!form.travelingWith) newErrors.travelingWith = "Please tell us who you're traveling with"
+    
+    if (form.travelingWith) {
+      if (!form.adults) newErrors.adults = "Required"
+      if (!form.children) newErrors.children = "Required"
     }
 
-    if (step === 2) {
-      if (!form.fullName.trim()) newErrors.fullName = "Full name is required"
-      else if (form.fullName.trim().length < 2) newErrors.fullName = "Please enter your full name"
-      if (!form.email.trim()) newErrors.email = "Email is required"
-      else if (!validateEmail(form.email)) newErrors.email = "Please enter a valid email"
-      if (!form.phone.trim()) newErrors.phone = "Phone number is required"
-      else if (!validatePhone(form.phone)) newErrors.phone = "Please enter a valid phone number"
-      if (!form.country) newErrors.country = "Please select your country"
-    }
-
-    if (step === 3) {
-      if (!form.budget) newErrors.budget = "Please select a budget range"
-      if (!form.accommodation) newErrors.accommodation = "Please select accommodation preference"
-    }
-
+    if (!form.budget) newErrors.budget = "Please select a budget range"
+    if (!form.fullName.trim()) newErrors.fullName = "Required"
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Valid email required"
+    if (!form.phone.trim()) newErrors.phone = "Required"
+    
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
 
-  const handleNext = () => {
-    if (validateStep(currentStep)) {
-      setCurrentStep((prev) => Math.min(prev + 1, 4))
-      window.scrollTo({ top: 0, behavior: "smooth" })
+  const handleNext = (nextStep) => {
+    setActiveStep(Math.max(activeStep, nextStep))
+    setTimeout(() => {
+      const element = document.getElementById(`sec-${nextStep}`)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 100)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!validate()) {
+      const firstError = document.querySelector('[role="alert"]')
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
     }
-  }
-
-  const handleBack = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 1))
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
-  const handleSubmit = async () => {
-    if (!validateStep(3)) return
 
     setIsSubmitting(true)
     setSubmitError("")
 
     try {
-      const selectedExperience = experiences.find((e) => e.slug === form.experience)
+      // Format data for email service
       const emailData = {
         ...form,
-        experienceTitle: selectedExperience?.title || form.experience,
-        budgetLabel: BUDGET_OPTIONS.find((b) => b.value === form.budget)?.label || form.budget,
-        accommodationLabel: ACCOMMODATION_OPTIONS.find((a) => a.value === form.accommodation)?.label || form.accommodation,
-        countryLabel: COUNTRY_OPTIONS.find((c) => c.value === form.country)?.label || form.country,
+        years: form.years.join(", "),
+        months: form.months.join(", "),
+        experiences: form.experiences.join(", "),
+        countries: form.countries.join(", "),
       }
 
       await sendBookingData(emailData)
       setSubmitted(true)
       window.scrollTo({ top: 0, behavior: "smooth" })
     } catch (error) {
-      console.error("Failed to send booking:", error)
+      console.error("Failed to send enquiry:", error)
       setSubmitError("Something went wrong. Please try again or contact us directly.")
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  const selectedExperience = experiences.find((e) => e.slug === form.experience)
-
-  // Success screen
   if (submitted) {
     return (
-      <div className="bg-white rounded-xl shadow-sm p-8 md:p-12 text-center animate-in fade-in duration-500">
-        <div className="w-16 h-16 bg-[#3a5a40]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-[#3a5a40]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="bg-white rounded-3xl shadow-sm p-8 md:p-16 text-center animate-in fade-in zoom-in duration-500 max-w-2xl mx-auto border border-zinc-100">
+        <div className="w-20 h-20 bg-[#3a5a40]/10 rounded-full flex items-center justify-center mx-auto mb-8">
+          <svg className="w-10 h-10 text-[#3a5a40]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-2xl md:text-3xl font-medium text-gray-900 mb-3">Thank You!</h2>
-        <p className="text-gray-600 mb-8 max-w-md mx-auto">
-          We've received your booking inquiry for{" "}
-          <span className="font-medium text-gray-900">{selectedExperience?.title || "your safari"}</span>.
-          One of our safari specialists will contact you within 24 hours.
+        <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">Enquiry Sent!</h2>
+        <p className="text-gray-600 mb-10 text-lg leading-relaxed">
+          Thank you for choosing Modus Safaris. We've received your request and our specialists will be in touch within 24 hours to begin crafting your journey.
         </p>
         <button
           onClick={() => (window.location.href = "/")}
-          className="px-8 py-3 bg-[#3a5a40] text-white font-medium hover:bg-[#2f4a33] transition-colors rounded-lg"
+          className="px-10 py-4 bg-[#3a5a40] text-white font-medium hover:bg-[#2f4a33] transition-all rounded-full shadow-lg"
         >
-          Back to Home
+          Explore More Safaris
         </button>
       </div>
     )
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-6 md:p-10">
-      {/* Progress indicator */}
-      <div className="mb-10">
-        <ProgressIndicator currentStep={currentStep} totalSteps={4} />
-      </div>
+    <div className="relative max-w-4xl mx-auto">
+      {/* Vertical Progress Line (Desktop only) */}
+      <div className="hidden lg:block absolute left-[19px] top-10 bottom-40 w-0.5 bg-gradient-to-b from-[#3a5a40] via-[#3a5a40]/30 to-transparent" />
 
-      {/* Step 1: Experience Basics */}
-      {currentStep === 1 && (
-        <div className="space-y-6 animate-in fade-in duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-            <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
-              Choose Your Experience
+      <form onSubmit={handleSubmit} className="space-y-20 pb-20 relative">
+        {/* Section 1: Duration */}
+        <section id="sec-1" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-6 duration-700">
+          <div className="flex items-center gap-5">
+            <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+              <IoTimeOutline className="text-xl" />
             </span>
-          </div>
-
-          <FormSelect
-            id="experience"
-            name="experience"
-            label="Safari Experience"
-            required
-            value={form.experience}
-            onChange={(e) => updateField("experience", e.target.value)}
-            error={errors.experience}
-          >
-            <option value="">Select an experience</option>
-            {experiences.map((exp) => (
-              <option key={exp.slug} value={exp.slug}>
-                {exp.title} ({exp.duration})
-              </option>
-            ))}
-            <option value="custom">Custom / Tailor-made Safari</option>
-          </FormSelect>
-
-          {selectedExperience && (
-            <div className="bg-zinc-50 rounded-lg p-4 flex gap-4">
-              <img
-                src={selectedExperience.heroImage}
-                alt={selectedExperience.title}
-                className="w-20 h-20 object-cover rounded-lg shrink-0"
-              />
-              <div>
-                <p className="font-medium text-gray-900">{selectedExperience.title}</p>
-                <p className="text-sm text-gray-500">
-                  {selectedExperience.duration} • From ${selectedExperience.startingPrice.toLocaleString()}
-                </p>
-              </div>
+            <div className="space-y-1">
+              <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 01</p>
+              <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">How long do you want to travel for?</h3>
             </div>
-          )}
-
-          <FormInput
-            id="travelDates"
-            name="travelDates"
-            label="Preferred Travel Dates"
-            required
-            value={form.travelDates}
-            onChange={(e) => updateField("travelDates", e.target.value)}
-            error={errors.travelDates}
-            placeholder="e.g. June 15 - June 22, 2025"
-          />
-
-          <FormSelect
-            id="numberOfTravelers"
-            name="numberOfTravelers"
-            label="Number of Travelers"
-            required
-            value={form.numberOfTravelers}
-            onChange={(e) => updateField("numberOfTravelers", e.target.value)}
-            error={errors.numberOfTravelers}
-          >
-            {GUEST_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </FormSelect>
-        </div>
-      )}
-
-      {/* Step 2: Personal Details */}
-      {currentStep === 2 && (
-        <div className="space-y-6 animate-in fade-in duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-            <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
-              Your Details
-            </span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormInput
-              id="fullName"
-              name="fullName"
-              label="Full Name"
-              required
-              value={form.fullName}
-              onChange={(e) => updateField("fullName", e.target.value)}
-              error={errors.fullName}
-              placeholder="e.g. Jane Smith"
-              autoComplete="name"
-            />
-            <FormInput
-              id="email"
-              name="email"
-              label="Email Address"
-              type="email"
-              required
-              value={form.email}
-              onChange={(e) => updateField("email", e.target.value)}
-              error={errors.email}
-              placeholder="you@example.com"
-              autoComplete="email"
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormInput
-              id="phone"
-              name="phone"
-              label="Phone / WhatsApp"
-              type="tel"
-              required
-              value={form.phone}
-              onChange={(e) => updateField("phone", e.target.value)}
-              error={errors.phone}
-              placeholder="e.g. +1 555 123 4567"
-              autoComplete="tel"
-            />
-            <FormSelect
-              id="country"
-              name="country"
-              label="Country"
-              required
-              value={form.country}
-              onChange={(e) => updateField("country", e.target.value)}
-              error={errors.country}
-            >
-              {COUNTRY_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
+          <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.08)] transition-all duration-500">
+            <FormCheckboxGroup label="" error={errors.duration} columns="grid-cols-2 lg:grid-cols-4">
+              {["1–3 days", "4–7 days", "8–14 days", "15+ days"].map((d) => (
+                <CheckboxButton
+                  key={d}
+                  id={`duration-${d}`}
+                  name="duration"
+                  label={d}
+                  checked={form.duration === d}
+                  type="radio"
+                  onChange={() => updateField("duration", d)}
+                />
               ))}
-            </FormSelect>
-          </div>
-        </div>
-      )}
-
-      {/* Step 3: Preferences */}
-      {currentStep === 3 && (
-        <div className="space-y-6 animate-in fade-in duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-            <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
-              Your Preferences
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormSelect
-              id="budget"
-              name="budget"
-              label="Budget Range (per person)"
-              required
-              value={form.budget}
-              onChange={(e) => updateField("budget", e.target.value)}
-              error={errors.budget}
-            >
-              {BUDGET_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </FormSelect>
-
-            <FormSelect
-              id="accommodation"
-              name="accommodation"
-              label="Accommodation Preference"
-              required
-              value={form.accommodation}
-              onChange={(e) => updateField("accommodation", e.target.value)}
-              error={errors.accommodation}
-            >
-              {ACCOMMODATION_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </FormSelect>
-          </div>
-
-          <FormTextarea
-            id="notes"
-            name="notes"
-            label="Additional Notes or Requests"
-            value={form.notes}
-            onChange={(e) => updateField("notes", e.target.value)}
-            placeholder="Tell us about any special interests, dietary requirements, celebrations, or questions..."
-            rows={4}
-          />
-        </div>
-      )}
-
-      {/* Step 4: Review */}
-      {currentStep === 4 && (
-        <div className="space-y-6 animate-in fade-in duration-300">
-          <div className="flex items-center gap-3 mb-2">
-            <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-            <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
-              Review Your Inquiry
-            </span>
-          </div>
-
-          <div className="space-y-4">
-            {/* Experience */}
-            <div className="bg-zinc-50 rounded-lg p-5">
-              <div className="flex justify-between items-start mb-3">
-                <h4 className="font-medium text-gray-900">Experience</h4>
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep(1)}
-                  className="text-[#3a5a40] text-sm font-medium hover:underline"
+            </FormCheckboxGroup>
+            {form.duration && activeStep === 1 && (
+              <div className="flex justify-start pt-8 mt-8 border-t border-zinc-50">
+                <button 
+                  type="button" 
+                  onClick={() => handleNext(2)}
+                  className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
                 >
-                  Edit
+                  Next Step <span>&rarr;</span>
                 </button>
               </div>
-              <p className="text-gray-700">{selectedExperience?.title || "Custom Safari"}</p>
-              <p className="text-sm text-gray-500 mt-1">
-                {form.travelDates} • {form.numberOfTravelers} traveler(s)
-              </p>
-            </div>
+            )}
+          </div>
+        </section>
 
-            {/* Personal */}
-            <div className="bg-zinc-50 rounded-lg p-5">
-              <div className="flex justify-between items-start mb-3">
-                <h4 className="font-medium text-gray-900">Your Details</h4>
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep(2)}
-                  className="text-[#3a5a40] text-sm font-medium hover:underline"
-                >
-                  Edit
-                </button>
+        {/* Section 2: When */}
+        {activeStep >= 2 && (
+          <section id="sec-2" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoCalendarOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 02</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Which year and month suits you best?</h3>
               </div>
-              <p className="text-gray-700">{form.fullName}</p>
-              <p className="text-sm text-gray-500 mt-1">{form.email}</p>
-              <p className="text-sm text-gray-500">{form.phone}</p>
-              <p className="text-sm text-gray-500">
-                {COUNTRY_OPTIONS.find((c) => c.value === form.country)?.label}
-              </p>
             </div>
-
-            {/* Preferences */}
-            <div className="bg-zinc-50 rounded-lg p-5">
-              <div className="flex justify-between items-start mb-3">
-                <h4 className="font-medium text-gray-900">Preferences</h4>
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep(3)}
-                  className="text-[#3a5a40] text-sm font-medium hover:underline"
-                >
-                  Edit
-                </button>
+            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] space-y-10">
+              <div className="space-y-8">
+                <FormCheckboxGroup label="Preferred Year" error={errors.year} columns="grid-cols-3">
+                  {["2025", "2026", "2027"].map((y) => (
+                    <CheckboxButton
+                      key={y}
+                      id={`year-${y}`}
+                      label={y}
+                      checked={form.years.includes(y)}
+                      onChange={() => toggleArrayItem("years", y)}
+                    />
+                  ))}
+                </FormCheckboxGroup>
+                <FormCheckboxGroup label="Preferred Month(s)" error={errors.month} columns="grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                  {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((m) => (
+                    <CheckboxButton
+                      key={m}
+                      id={`month-${m}`}
+                      label={m}
+                      checked={form.months.includes(m)}
+                      onChange={() => toggleArrayItem("months", m)}
+                    />
+                  ))}
+                </FormCheckboxGroup>
               </div>
-              <p className="text-sm text-gray-600">
-                <span className="text-gray-800">Budget:</span>{" "}
-                {BUDGET_OPTIONS.find((b) => b.value === form.budget)?.label}
-              </p>
-              <p className="text-sm text-gray-600 mt-1">
-                <span className="text-gray-800">Accommodation:</span>{" "}
-                {ACCOMMODATION_OPTIONS.find((a) => a.value === form.accommodation)?.label}
-              </p>
-              {form.notes && (
-                <p className="text-sm text-gray-600 mt-2">
-                  <span className="text-gray-800">Notes:</span> {form.notes}
-                </p>
+              {form.years.length > 0 && form.months.length > 0 && activeStep === 2 && (
+                <div className="flex justify-start pt-8 border-t border-zinc-50">
+                  <button 
+                    type="button" 
+                    onClick={() => handleNext(3)}
+                    className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
+                  >
+                    Next Step <span>&rarr;</span>
+                  </button>
+                </div>
               )}
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* Error message */}
-      {submitError && (
-        <div className="p-4 bg-red-50 text-red-700 rounded-lg text-sm mt-6">
-          {submitError}
-        </div>
-      )}
-
-      {/* Navigation buttons */}
-      <div className="flex justify-between items-center mt-10 pt-6 border-t border-gray-200">
-        {currentStep > 1 ? (
-          <button
-            type="button"
-            onClick={handleBack}
-            disabled={isSubmitting}
-            className="px-6 py-3 text-gray-600 font-medium hover:text-gray-800 transition-colors disabled:opacity-50"
-          >
-            ← Back
-          </button>
-        ) : (
-          <div />
+          </section>
         )}
 
-        {currentStep < 4 ? (
-          <button
-            type="button"
-            onClick={handleNext}
-            className="px-8 py-3 bg-[#3a5a40] text-white font-medium shadow hover:scale-[1.02] transition-all duration-300"
-          >
-            Next →
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={handleSubmit}
-            disabled={isSubmitting}
-            className="px-8 py-3 bg-[#3a5a40] text-white font-medium shadow hover:scale-[1.02] transition-all duration-300 disabled:opacity-70 disabled:hover:scale-100 flex items-center gap-2"
-          >
-            {isSubmitting ? (
-              <>
-                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              "Submit Inquiry"
-            )}
-          </button>
+        {/* Section 3: Experiences */}
+        {activeStep >= 3 && (
+          <section id="sec-3" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoHeartOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 03</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">What experience would you like to have?</h3>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]">
+              <FormCheckboxGroup label="" error={errors.experiences} columns="grid-cols-2 lg:grid-cols-3">
+                {[
+                  "Gorilla trekking", "Wildlife safari", "Cultural experience", 
+                  "Adventure / hiking", "Luxury travel", "Honeymoon / romantic", "Photography"
+                ].map((e) => (
+                  <CheckboxButton
+                    key={e}
+                    id={`exp-${e}`}
+                    label={e}
+                    checked={form.experiences.includes(e)}
+                    onChange={() => toggleArrayItem("experiences", e)}
+                  />
+                ))}
+              </FormCheckboxGroup>
+              {form.experiences.length > 0 && activeStep === 3 && (
+                <div className="flex justify-start pt-8 mt-8 border-t border-zinc-50">
+                  <button 
+                    type="button" 
+                    onClick={() => handleNext(4)}
+                    className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
+                  >
+                    Next Step <span>&rarr;</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
         )}
-      </div>
+
+        {/* Section 4: Countries */}
+        {activeStep >= 4 && (
+          <section id="sec-4" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoMapOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 04</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Do you have a preferred country?</h3>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]">
+              <FormCheckboxGroup label="" error={errors.countries} columns="grid-cols-2 lg:grid-cols-5">
+                {["Uganda", "Kenya", "Rwanda", "Tanzania", "Other"].map((c) => (
+                  <CheckboxButton
+                    key={c}
+                    id={`country-${c}`}
+                    label={c}
+                    checked={form.countries.includes(c)}
+                    onChange={() => toggleArrayItem("countries", c)}
+                  />
+                ))}
+              </FormCheckboxGroup>
+              {form.countries.length > 0 && activeStep === 4 && (
+                <div className="flex justify-start pt-8 mt-8 border-t border-zinc-50">
+                  <button 
+                    type="button" 
+                    onClick={() => handleNext(5)}
+                    className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
+                  >
+                    Next Step <span>&rarr;</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* Section 5: Travelers */}
+        {activeStep >= 5 && (
+          <section id="sec-5" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoPeopleOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 05</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Who will you be traveling with?</h3>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]">
+              <FormCheckboxGroup label="" error={errors.travelingWith} columns="grid-cols-2 lg:grid-cols-5">
+                {["Solo", "Couple", "Family", "Friends", "Group"].map((t) => (
+                  <CheckboxButton
+                    key={t}
+                    id={`traveler-${t}`}
+                    label={t}
+                    checked={form.travelingWith === t}
+                    type="radio"
+                    onChange={() => updateField("travelingWith", t)}
+                  />
+                ))}
+              </FormCheckboxGroup>
+              {form.travelingWith && activeStep === 5 && (
+                <div className="flex justify-start pt-8 mt-8 border-t border-zinc-50">
+                  <button 
+                    type="button" 
+                    onClick={() => handleNext(6)}
+                    className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
+                  >
+                    Next Step <span>&rarr;</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* Section 6: Counts (Conditional) */}
+        {activeStep >= 6 && (
+          <section id="sec-6" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoPersonAddOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 06</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Number of travelers</h3>
+              </div>
+            </div>
+            <div className={`overflow-hidden transition-all duration-700 max-h-0 ${form.travelingWith ? "max-h-[800px]" : ""}`}>
+              <div className="bg-zinc-50 p-8 md:p-12 rounded-[2.5rem] border border-zinc-100 space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                  <FormCheckboxGroup label="Adults" error={errors.adults} columns="grid-cols-5">
+                    {["1", "2", "3", "4", "5+"].map((v) => (
+                      <CheckboxButton
+                        key={`adult-${v}`}
+                        id={`adult-${v}`}
+                        label={v}
+                        checked={form.adults === v}
+                        type="radio"
+                        onChange={() => updateField("adults", v)}
+                      />
+                    ))}
+                  </FormCheckboxGroup>
+                  <FormCheckboxGroup label="Children" error={errors.children} columns="grid-cols-5">
+                    {["0", "1", "2", "3", "4+"].map((v) => (
+                      <CheckboxButton
+                        key={`child-${v}`}
+                        id={`child-${v}`}
+                        label={v}
+                        checked={form.children === v}
+                        type="radio"
+                        onChange={() => updateField("children", v)}
+                      />
+                    ))}
+                  </FormCheckboxGroup>
+                </div>
+                {form.adults && form.children && activeStep === 6 && (
+                  <div className="flex justify-start pt-8 border-t border-zinc-200">
+                    <button 
+                      type="button" 
+                      onClick={() => handleNext(7)}
+                      className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
+                    >
+                      Next Step <span>&rarr;</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Section 7: Budget */}
+        {activeStep >= 7 && (
+          <section id="sec-7" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoCashOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 07</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Budget in mind, per person (USD)?</h3>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]">
+              <FormCheckboxGroup label="" error={errors.budget} columns="grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+                {["Under $1,500", "$1,500 – $2,500", "$2,500 – $4,000", "$4,000 – $6,000", "$6,000+"].map((b) => (
+                  <CheckboxButton
+                    key={b}
+                    id={`budget-${b}`}
+                    label={b}
+                    checked={form.budget === b}
+                    type="radio"
+                    onChange={() => updateField("budget", b)}
+                  />
+                ))}
+              </FormCheckboxGroup>
+              {form.budget && activeStep === 7 && (
+                <div className="flex justify-start pt-8 mt-8 border-t border-zinc-50">
+                  <button 
+                    type="button" 
+                    onClick={() => handleNext(8)}
+                    className="bg-[#3a5a40] text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-[#2f4a33] hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-95"
+                  >
+                    Next Step <span>&rarr;</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* Section 8: Your Details */}
+        {activeStep >= 8 && (
+          <section id="sec-8" className="relative pl-0 lg:pl-16 space-y-8 animate-in slide-in-from-bottom-8 duration-700 scroll-mt-24 pb-12">
+            <div className="flex items-center gap-5">
+              <span className="relative z-10 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold shadow-lg shadow-[#3a5a40]/20 shrink-0">
+                <IoCreateOutline className="text-xl" />
+              </span>
+              <div className="space-y-1">
+                <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 08</p>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Your details</h3>
+              </div>
+            </div>
+            <div className="bg-white p-10 md:p-14 rounded-[3rem] border-2 border-[#3a5a40]/5 shadow-[0_20px_60px_-15px_rgba(58,90,64,0.1)] space-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+                <FormInput
+                  label="Full Name"
+                  placeholder="e.g. Jane Doe"
+                  value={form.fullName}
+                  onChange={(e) => updateField("fullName", e.target.value)}
+                  error={errors.fullName}
+                  required
+                />
+                <FormInput
+                  label="Email Address"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={form.email}
+                  onChange={(e) => updateField("email", e.target.value)}
+                  error={errors.email}
+                  required
+                />
+                <FormInput
+                  label="Phone Number"
+                  type="tel"
+                  placeholder="e.g. +1 555 000 0000"
+                  value={form.phone}
+                  onChange={(e) => updateField("phone", e.target.value)}
+                  error={errors.phone}
+                  required
+                />
+                <FormInput
+                  label="Nationality"
+                  placeholder="e.g. American"
+                  value={form.nationality}
+                  onChange={(e) => updateField("nationality", e.target.value)}
+                  error={errors.nationality}
+                />
+              </div>
+
+              <FormTextarea
+                label="Additional notes / comments"
+                placeholder="Tell us more about your ideal safari..."
+                value={form.notes}
+                onChange={(e) => updateField("notes", e.target.value)}
+                rows={5}
+              />
+
+              {submitError && (
+                <div className="p-5 bg-red-50 text-red-700 rounded-2xl text-sm border border-red-100 italic animate-pulse">
+                  {submitError}
+                </div>
+              )}
+
+              <div className="pt-8 border-t border-zinc-50">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`
+                    w-full px-12 py-5 bg-[#3a5a40] text-white font-black text-lg rounded-full shadow-2xl shadow-[#3a5a40]/30
+                    hover:bg-[#2f4a33] hover:translate-y-[-3px] transition-all duration-300 disabled:opacity-70 flex items-center justify-center gap-4
+                  `}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <span className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                      Securing your safari...
+                    </>
+                  ) : (
+                    <>
+                      SEND ENQUIRY
+                      <span className="text-xl">&rarr;</span>
+                    </>
+                  )}
+                </button>
+                <p className="text-center text-zinc-400 text-xs mt-6 font-medium uppercase tracking-widest">
+                  Secure & Confidential Enquiry
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+      </form>
     </div>
   )
 }
