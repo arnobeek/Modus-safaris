@@ -36,32 +36,29 @@ export default function Footer() {
                 </div>
                 <div className='flex flex-col justify-between gap-3 text-sm'>
                     <p className="text-xl font-bold">DESTINATIONS</p>
-                    <Link className="text-white">Uganda</Link>
-                    <Link className="text-white">Kenya</Link>
-                    <Link className="text-white">Tanzania</Link>
-                    <Link className="text-white">Rwanda</Link>
+                    <Link className="text-white hover:text-amber-300">Uganda</Link>
+                    <Link className="text-white hover:text-amber-300">Kenya</Link>
+                    <Link className="text-white hover:text-amber-300">Tanzania</Link>
+                    <Link className="text-white hover:text-amber-300">Rwanda</Link>
                     
                 </div>
                 <div className='flex flex-col justify-between gap-3 text-sm'>
                     <p className="text-xl font-bold">COMPANY</p>
-                    <Link className="text-white">About Us</Link>
-                    <Link className="text-white">Sustainability</Link>
-                    <Link className="text-white">Travel Advisors</Link>
-                    <Link className="text-white">Stories</Link>
+                    <Link className="text-white hover:text-amber-300">About Us</Link>
+                    <Link className="text-white hover:text-amber-300">Sustainability</Link>
+                    <Link className="text-white hover:text-amber-300">Travel Advisors</Link>
+                    <Link className="text-white hover:text-amber-300">Stories</Link>
                 </div>
                 <div className='flex flex-col justify-between gap-3 text-sm'>
                     <p className="text-xl font-bold">CONTACT</p>
                     <div>
-                        <p className="text-xl">PHONE</p>
-                        <p className="text-white"><a href="tel:+256756733094">+256-756-733-094</a></p>
+                        <p className="text-white hover:text-amber-300"><a href="tel:+256756733094">+256-756-733-094</a></p>
                     </div>
                     <div>
-                        <p className="text-xl">EMAIL</p>
-                        <p className="text-white"><a href="mailto:info@modussafaris.com">info@modussafaris.com</a></p>
+                        <p className="text-white hover:text-amber-300"><a href="mailto:info@modussafaris.com">info@modussafaris.com</a></p>
                     </div>
                     <div>
-                        <p className="text-xl">OFFICE</p>
-                        <p className="text-white">Mbarara, Uganda</p>
+                        <p className="text-white hover:text-amber-300">Mbarara, Uganda</p>
                     </div>
                 </div>
 
