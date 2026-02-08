@@ -35,7 +35,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className='flex flex-col justify-between gap-3 text-sm'>
-                    <p className="text-xl font-extrabold">DESTINATIONS</p>
+                    <p className="text-xl font-bold">DESTINATIONS</p>
                     <Link className="text-white">Uganda</Link>
                     <Link className="text-white">Kenya</Link>
                     <Link className="text-white">Tanzania</Link>
@@ -43,14 +43,14 @@ export default function Footer() {
                     
                 </div>
                 <div className='flex flex-col justify-between gap-3 text-sm'>
-                    <p className="text-xl font-extrabold">COMPANY</p>
+                    <p className="text-xl font-bold">COMPANY</p>
                     <Link className="text-white">About Us</Link>
                     <Link className="text-white">Sustainability</Link>
                     <Link className="text-white">Travel Advisors</Link>
                     <Link className="text-white">Stories</Link>
                 </div>
                 <div className='flex flex-col justify-between gap-3 text-sm'>
-                    <p className="text-xl font-extrabold">CONTACT</p>
+                    <p className="text-xl font-bold">CONTACT</p>
                     <div>
                         <p className="text-xl">PHONE</p>
                         <p className="text-white"><a href="tel:+256756733094">+256-756-733-094</a></p>
