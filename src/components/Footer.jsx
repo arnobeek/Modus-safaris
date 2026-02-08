@@ -16,19 +16,19 @@ export default function Footer() {
                     <p className="text-white">Curating extraordinary East African journeys for the discerning traveler.</p>
                     <div className='flex justify-between'>
                         <a href="#">
-                            <div className='w-10 h-10 border flex items-center justify-center rounded-md hover:scale-105'>
+                            <div className='w-10 h-10 border flex items-center justify-center rounded-md hover:scale-105 hover:text-amber-300'>
                                 <FaInstagram size={30} />
                             </div>
                         </a>
 
                         <a href="#">
-                            <div className='w-10 h-10 border flex items-center justify-center rounded-md hover:scale-105'>
+                            <div className='w-10 h-10 border flex items-center justify-center rounded-md hover:scale-105 hover:text-amber-300'>
                                 <FaFacebook size={30} />
                             </div>
                         </a>
 
                         <a href="#">
-                            <div className='w-10 h-10 border flex items-center justify-center rounded-md hover:scale-105'>
+                            <div className='w-10 h-10 border flex items-center justify-center rounded-md hover:scale-105 hover:text-amber-300'>
                                 <IoMailOutline size={30} />
                             </div>
                         </a>
