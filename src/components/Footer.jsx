@@ -52,12 +52,15 @@ export default function Footer() {
                 <div className='flex flex-col justify-between gap-3 text-sm'>
                     <p className="text-xl font-bold">CONTACT</p>
                     <div>
+                        <p className="font-semibold">PHONE</p>
                         <p className="text-white hover:text-amber-300"><a href="tel:+256756733094">+256-756-733-094</a></p>
                     </div>
                     <div>
+                        <p className="font-semibold">EMAIL</p>
                         <p className="text-white hover:text-amber-300"><a href="mailto:info@modussafaris.com">info@modussafaris.com</a></p>
                     </div>
                     <div>
+                        <p className="font-semibold">OFFICES</p>
                         <p className="text-white hover:text-amber-300">Mbarara, Uganda</p>
                     </div>
                 </div>
