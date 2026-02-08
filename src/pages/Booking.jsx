@@ -22,7 +22,7 @@ export default function Booking() {
         <meta property="og:site_name" content="Modus Safaris" />
       </Helmet>
 
-      <header className="text-white flex flex-col gap-5 justify-center min-h-[50vh] md:min-h-[60vh] px-6 md:px-10 hero-image-destination">
+      <header className="text-white flex flex-col gap-5 justify-center min-h-[50vh] md:min-h-[60vh] px-6 md:px-10 hero-image-booking">
         <div className="flex items-center gap-2">
           <hr className="w-10 bg-[#3a5a40] h-0.5 border-none" />
           <p className="text-sm tracking-widest">PLAN YOUR JOURNEY</p>

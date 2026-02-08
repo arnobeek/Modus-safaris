@@ -405,7 +405,7 @@ export default function Home() {
             to="/booking"
             className="inline-block px-10 py-4 bg-white text-[#3a5a40] font-medium shadow-lg hover:scale-105 transition-all duration-300"
           >
-            Start Planning Now
+            Send an Inquiry Now
           </Link>
         </div>
       </section>

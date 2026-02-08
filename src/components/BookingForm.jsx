@@ -555,7 +555,7 @@ export default function BookingForm() {
                     </>
                   ) : (
                     <>
-                      SEND ENQUIRY
+                      SEND INQUIRY
                       <span className="text-xl">&rarr;</span>
                     </>
                   )}

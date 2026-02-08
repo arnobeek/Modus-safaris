@@ -910,7 +910,7 @@ export const experiences = [
             "International flights",
             "Premium drinks"
         ],
-        featured: true
+        featured: false
     },
     {
         id: 12,

@@ -81,3 +81,9 @@ textarea,
   background-size: cover;
   background-repeat: no-repeat;
 }
+.hero-image-booking {
+  background-image: url('https://res.cloudinary.com/dv093jd0o/image/upload/v1770551080/heroimagedestination_enqpox.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
