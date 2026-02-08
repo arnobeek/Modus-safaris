@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className=' flex flex-col w-50 gap-3'>
                     <div className="flex items-center gap-2">
                         <img src={logo} className="w-15" />
-                        <h1 className="text-2xl font-extrabold">MODUS</h1>
+                        <h1 className="text-2xl font-extrabold">MODUS SAFARIS</h1>
                     </div>
                     <p className="text-white">Curating extraordinary East African journeys for the discerning traveler.</p>
                     <div className='flex justify-between'>
