@@ -101,7 +101,7 @@ function MobileNavLinkWithDropdown({ to, label, onNavigate }) {
         <span>{label}</span>
         <HiChevronDown className={`w-5 h-5 transition-transform ${expanded ? "rotate-180" : ""}`} />
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${expanded ? "max-h-60 mt-3" : "max-h-0"}`}>
+      <div className={`overflow-hidden transition-all duration-300 ${expanded ? "max-h-60 mt-3 ml-15" : "max-h-0"}`}>
         <Link
           to="/destinations"
           onClick={onNavigate}
