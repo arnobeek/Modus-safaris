@@ -67,7 +67,7 @@ export default function Footer() {
 
             </div>
             <hr className='mt-10' />
-            <div className='flex justify-between py-5 text-sm'>
+            <div className='flex flex-col md:flex-row justify-between items-center py-8 text-xs text-gray-300 gap-4'>
                 <div>
                     <p>&copy;2026 Modus Safaris. All Rights Reserved</p>
                 </div>
