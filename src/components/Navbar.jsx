@@ -94,7 +94,7 @@ function MobileNavLinkWithDropdown({ to, label, onNavigate }) {
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className={`w-full flex items-center justify-between tracking-widest text-lg transition-colors ${
+        className={`w-full flex items-center justify-center tracking-widest text-lg transition-colors ${
           isActive ? "text-[#3a5a40] font-medium" : "text-gray-800 hover:text-[#3a5a40]"
         }`}
       >
