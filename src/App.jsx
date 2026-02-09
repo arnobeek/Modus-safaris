@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Destinations from './pages/Destinations'
@@ -14,6 +15,7 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
