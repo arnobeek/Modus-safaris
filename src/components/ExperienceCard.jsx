@@ -34,7 +34,6 @@ export default function ExperienceCard({ experience }) {
         <div className="p-5 md:p-6 flex flex-col gap-3">
           <div className="flex items-center justify-between">
             <span className="text-sm text-[#3a5a40] font-medium">{country}</span>
-            <span className="text-sm text-gray-500">From ${startingPrice.toLocaleString()}</span>
           </div>
           <h3 className="text-xl md:text-2xl font-medium text-gray-900 group-hover:text-[#3a5a40] transition-colors">
             {title}

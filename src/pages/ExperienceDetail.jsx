@@ -132,10 +132,6 @@ export default function ExperienceDetail() {
             <HiOutlineCalendar className="w-5 h-5" />
             <span>{experience.duration}</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-            <HiOutlineCurrencyDollar className="w-5 h-5" />
-            <span>From ${experience.startingPrice.toLocaleString()}</span>
-          </div>
           <span className="bg-[#3a5a40] px-4 py-2 rounded-full">{experience.travelStyle}</span>
         </div>
       </header>
@@ -211,13 +207,6 @@ export default function ExperienceDetail() {
           <aside className="space-y-6">
             {/* Booking card */}
             <div className="sticky top-24 bg-zinc-50 rounded-xl p-6 space-y-6">
-              <div>
-                <p className="text-sm text-gray-500 mb-1">Starting from</p>
-                <p className="text-3xl font-medium text-gray-900">
-                  ${experience.startingPrice.toLocaleString()}
-                  <span className="text-lg font-normal text-gray-500"> / person</span>
-                </p>
-              </div>
               <Link
                 to={`/booking?experience=${experience.slug}`}
                 className="block w-full text-center px-6 py-3 bg-[#3a5a40] text-white font-medium shadow hover:scale-[1.02] transition-all duration-300"

@@ -84,6 +84,7 @@ export default function Home() {
     {
       id: 1,
       name: "Bwindi Impenetrable Forest",
+      slug: "bwindi-impenetrable-forest",
       location: "Uganda",
       info: "Trek through ancient rainforest to encounter endangered mountain gorillas in their natural habitat—an experience that changes lives.",
       image:
@@ -92,6 +93,7 @@ export default function Home() {
     {
       id: 2,
       name: "Murchison Falls National Park",
+      slug: "murchison-falls",
       location: "Uganda",
       info: "Where the Nile explodes through a narrow gorge—experience game drives, boat safaris, and the thundering power of nature.",
       image:
@@ -100,6 +102,7 @@ export default function Home() {
     {
       id: 3,
       name: "Kidepo Valley National Park",
+      slug: "kidepo-valley",
       location: "Uganda",
       info: "Remote wilderness with vast plains, rare species, and some of Africa's most dramatic landscapes.",
       image:
@@ -108,6 +111,7 @@ export default function Home() {
     {
       id: 4,
       name: "Lake Mburo National Park",
+      slug: "lake-mburo",
       location: "Uganda",
       info: "A compact gem perfect for walking safaris, horseback adventures, and close wildlife encounters.",
       image:
@@ -281,7 +285,7 @@ export default function Home() {
             {treasures.map((treasure) => (
               <DestinationCard key={treasure.id} destination={{
                 ...treasure,
-                slug: treasure.name.toLowerCase().replace(/\s+/g, '-').replace('national-park', '').replace('forest', '').trim().replace(/-$/, ''), // Fallback slug generation if not present
+                slug: treasure.slug,
                 shortDescription: treasure.info // Map 'info' to 'shortDescription' for the card
               }} />
             ))}
