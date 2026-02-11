@@ -30,6 +30,9 @@ export const destinations = [
       { name: "Nkuringo Bwindi Gorilla Lodge", type: "Safari lodge", area: "Nkuringo" },
       { name: "Clouds Mountain Gorilla Lodge", type: "Luxury lodge", area: "Nkuringo" },
     ],
+    latitude: -1.0456,
+    longitude: 29.6152,
+    locationName: "Bwindi Impenetrable National Park",
     relatedExperiences: ["gorilla-trekking-bwindi", "uganda-primates-wildlife"],
   },
   {
@@ -57,6 +60,9 @@ export const destinations = [
       { name: "Bakers Lodge", type: "Safari lodge", area: "Southern bank" },
       { name: "Murchison River Lodge", type: "Safari lodge", area: "Southern bank" },
     ],
+    latitude: 2.1876,
+    longitude: 31.7816,
+    locationName: "Murchison Falls National Park",
     relatedExperiences: ["uganda-primates-wildlife"],
   },
   {
@@ -84,6 +90,9 @@ export const destinations = [
       { name: "Marafiki Safari Lodge", type: "Safari lodge", area: "Katunguru" },
       { name: "Elephant Plains Lodge", type: "Safari lodge", area: "Katunguru" },
     ],
+    latitude: -0.3706,
+    longitude: 29.9577,
+    locationName: "Queen Elizabeth National Park",
     relatedExperiences: ["uganda-primates-wildlife"],
   },
   {
@@ -109,6 +118,9 @@ export const destinations = [
       { name: "Kidepo Savannah Lodge", type: "Safari lodge", area: "Kalokudo Gate area" },
       { name: "Adere Safari Lodge", type: "Safari lodge", area: "Near park boundary" },
     ],
+    latitude: 3.7333,
+    longitude: 33.8667,
+    locationName: "Kidepo Valley National Park",
   },
   {
     id: 5,
@@ -135,6 +147,9 @@ export const destinations = [
       { name: "Angama Mara", type: "Luxury lodge", area: "Oloololo Escarpment" },
       { name: "Governors' Camp", type: "Tented camp", area: "Mara River region" },
     ],
+    latitude: -1.5055,
+    longitude: 35.2509,
+    locationName: "Maasai Mara National Reserve",
     relatedExperiences: ["masai-mara-explorer"],
   },
   {
@@ -161,6 +176,9 @@ export const destinations = [
       { name: "Elerai Camp", type: "Tented camp", area: "Elerai Conservancy" },
       { name: "Amboseli Serena Safari Lodge", type: "Safari lodge", area: "Amboseli ecosystem" },
     ],
+    latitude: -2.6521,
+    longitude: 37.2606,
+    locationName: "Amboseli National Park",
     relatedExperiences: ["amboseli-kilimanjaro-views"],
   },
   {
@@ -188,6 +206,9 @@ export const destinations = [
       { name: "Mbuzi Mawe Serena Camp", type: "Tented camp", area: "Central Serengeti" },
       { name: "Kubu Kubu Tented Lodge", type: "Tented lodge", area: "Central Serengeti" },
     ],
+    latitude: -2.3333,
+    longitude: 34.8333,
+    locationName: "Serengeti National Park",
     relatedExperiences: ["serengeti-migration-safari"],
   },
   {
@@ -214,6 +235,9 @@ export const destinations = [
       { name: "The Highlands Ngorongoro", type: "Luxury camp", area: "Ngorongoro Highlands" },
       { name: "Rhino Lodge", type: "Safari lodge", area: "Crater rim" },
     ],
+    latitude: -3.2435,
+    longitude: 35.4878,
+    locationName: "Ngorongoro Conservation Area",
   },
   {
     id: 9,
@@ -239,6 +263,9 @@ export const destinations = [
       { name: "Sabyinyo Silverback Lodge", type: "Safari lodge", area: "Kinigi" },
       { name: "Virunga Lodge", type: "Luxury lodge", area: "Musanze / lakes region" },
     ],
+    latitude: -1.4823,
+    longitude: 29.4925,
+    locationName: "Volcanoes National Park",
     relatedExperiences: ["rwanda-gorillas-golden-monkeys"],
   },
   {
@@ -263,6 +290,9 @@ export const destinations = [
       { name: "Kyaninga Lodge", type: "Luxury lodge", area: "Crater Lake" },
       { name: "Turaco Treetops", type: "Lodge", area: "Near park" }
     ],
+    latitude: 0.4913,
+    longitude: 30.3957,
+    locationName: "Kibale National Park",
     relatedExperiences: ["uganda-primates-wildlife"]
   },
   {
@@ -287,6 +317,9 @@ export const destinations = [
       { name: "Rwakobo Rock", type: "Mid-range lodge", area: "Park boundary" },
       { name: "Kigambira Safari Lodge", type: "Luxury lodge", area: "Inside park" }
     ],
+    latitude: -0.6385,
+    longitude: 30.9575,
+    locationName: "Lake Mburo National Park",
     relatedExperiences: []
   },
   {
@@ -311,6 +344,9 @@ export const destinations = [
       { name: "Ruzizi Tented Lodge", type: "Tented lodge", area: "Lake Ihema" },
       { name: "Akagera Game Lodge", type: "Lodge", area: "South Akagera" }
     ],
+    latitude: -1.7167,
+    longitude: 30.7000,
+    locationName: "Akagera National Park",
     relatedExperiences: []
   },
   {
@@ -334,6 +370,9 @@ export const destinations = [
       { name: "One&Only Nyungwe House", type: "Ultra-luxury", area: "Tea plantation edge" },
       { name: "Nyungwe Top View Hill Hotel", type: "Mid-range", area: "Hilltop" }
     ],
+    latitude: -2.3167,
+    longitude: 29.2167,
+    locationName: "Nyungwe Forest National Park",
     relatedExperiences: []
   },
   {
@@ -358,6 +397,9 @@ export const destinations = [
       { name: "Ashnil Aruba Lodge", type: "Lodge", area: "Aruba Dam" },
       { name: "Voi Wildlife Lodge", type: "Lodge", area: "Park boundary" }
     ],
+    latitude: -2.8596,
+    longitude: 38.8354,
+    locationName: "Tsavo East National Park",
     relatedExperiences: []
   },
   {
@@ -382,6 +424,9 @@ export const destinations = [
       { name: "Kilaguni Serena Safari Lodge", type: "Lodge", area: "Waterhole view" },
       { name: "Severin Safari Camp", type: "Tented camp", area: "Savannah" }
     ],
+    latitude: -3.3769,
+    longitude: 37.9404,
+    locationName: "Tsavo West National Park",
     relatedExperiences: []
   },
   {
@@ -406,6 +451,9 @@ export const destinations = [
       { name: "Elephant Bedroom Camp", type: "Luxury camp", area: "Riverfront" },
       { name: "Saruni Samburu", type: "Luxury lodge", area: "Kalama Conservancy" }
     ],
+    latitude: 0.6128,
+    longitude: 37.5350,
+    locationName: "Samburu National Reserve",
     relatedExperiences: []
   },
   {
@@ -430,6 +478,9 @@ export const destinations = [
       { name: "The Cliff", type: "Luxury tented camp", area: "Cliff top" },
       { name: "Lake Nakuru Sopa Lodge", type: "Lodge", area: "High ground" }
     ],
+    latitude: -0.3013,
+    longitude: 36.1402,
+    locationName: "Lake Nakuru National Park",
     relatedExperiences: []
   },
   {
@@ -454,6 +505,9 @@ export const destinations = [
       { name: "Ol Pejeta Bush Camp", type: "Tented camp", area: "River" },
       { name: "Kicheche Laikipia Camp", type: "Eco camp", area: "Wilderness" }
     ],
+    latitude: 0.0076,
+    longitude: 36.9602,
+    locationName: "Ol Pejeta Conservancy",
     relatedExperiences: []
   },
   {
@@ -478,6 +532,9 @@ export const destinations = [
       { name: "Lemala Mpingo Ridge", type: "Luxury lodge", area: "Hilltop" },
       { name: "Tarangire Safari Lodge", type: "Lodge", area: "River view" }
     ],
+    latitude: -3.9317,
+    longitude: 36.0076,
+    locationName: "Tarangire National Park",
     relatedExperiences: []
   },
   {
@@ -502,6 +559,9 @@ export const destinations = [
       { name: "Manyara Green Camp", type: "Eco camp", area: "Riverbed" },
       { name: "Kirurumu Manyara Lodge", type: "Lodge", area: "Escarpment edge" }
     ],
+    latitude: -3.5356,
+    longitude: 35.8450,
+    locationName: "Lake Manyara National Park",
     relatedExperiences: []
   },
   {
@@ -526,6 +586,9 @@ export const destinations = [
       { name: "Beho Beho", type: "Luxury lodge", area: "Highlands" },
       { name: "Sand Rivers Selous", type: "Luxury lodge", area: "Riverfront" }
     ],
+    latitude: -8.5200,
+    longitude: 37.4500,
+    locationName: "Nyerere National Park",
     relatedExperiences: []
   },
   {
@@ -550,6 +613,9 @@ export const destinations = [
       { name: "Ruaha River Lodge", type: "Lodge", area: "Riverfront" },
       { name: "Ikuka Safari Camp", type: "Luxury camp", area: "Escarpment" }
     ],
+    latitude: -7.6667,
+    longitude: 34.9000,
+    locationName: "Ruaha National Park",
     relatedExperiences: []
   },
   {
@@ -574,6 +640,9 @@ export const destinations = [
       { name: "Ameg Lodge", type: "Lodge", area: "Moshi" },
       { name: "Kambi ya Tembo", type: "Camp", area: "Sinya concession" }
     ],
+    latitude: -3.0674,
+    longitude: 37.3556,
+    locationName: "Mount Kilimanjaro National Park",
     relatedExperiences: []
   },
   {
@@ -598,6 +667,9 @@ export const destinations = [
       { name: "Stanley's Kopje", type: "Camp", area: "Rocky outcrop" },
       { name: "Mikumi Wildlife Camp", type: "Lodge", area: "Waterhole view" }
     ],
+    latitude: -7.2167,
+    longitude: 37.1500,
+    locationName: "Mikumi National Park",
     relatedExperiences: []
   },
   {
@@ -621,6 +693,9 @@ export const destinations = [
       { name: "Semliki Safari Lodge", type: "Luxury lodge", area: "Semliki Valley" },
       { name: "Ntoroko Game Lodge", type: "Lodge", area: "Lake Albert" }
     ],
+    latitude: 0.8313,
+    longitude: 30.1587,
+    locationName: "Semuliki National Park",
     relatedExperiences: []
   },
   {
@@ -644,6 +719,9 @@ export const destinations = [
       { name: "Mount Gahinga Lodge", type: "Luxury lodge", area: "Park entrance" },
       { name: "Travelers Rest Hotel", type: "Historic hotel", area: "Kisoro" }
     ],
+    latitude: -1.3667,
+    longitude: 29.6333,
+    locationName: "Mgahinga Gorilla National Park",
     relatedExperiences: []
   },
   {
@@ -667,6 +745,9 @@ export const destinations = [
       { name: "Forest of Hope Guest House", type: "Guesthouse", area: "Gishwati" },
       { name: "The Retreat", type: "Luxury hotel", area: "Kigali (Base)" }
     ],
+    latitude: -1.7583,
+    longitude: 29.4269,
+    locationName: "Gishwati-Mukura National Park",
     relatedExperiences: []
   },
   {
@@ -690,6 +771,9 @@ export const destinations = [
       { name: "Fairmont Mount Kenya Safari Club", type: "Luxury hotel", area: "Nanyuki" },
       { name: "Serena Mountain Lodge", type: "Lodge", area: "Forest zone" }
     ],
+    latitude: -0.1500,
+    longitude: 37.3000,
+    locationName: "Mount Kenya National Park",
     relatedExperiences: []
   },
   {
@@ -714,6 +798,9 @@ export const destinations = [
       { name: "Aberdare Country Club", type: "Hotel", area: "Mweiga" },
       { name: "Treetops Lodge", type: "Historic lodge", area: "Salient" }
     ],
+    latitude: -0.4214,
+    longitude: 36.6879,
+    locationName: "Aberdare National Park",
     relatedExperiences: []
   },
   {
@@ -737,6 +824,9 @@ export const destinations = [
       { name: "Enashipai Resort & Spa", type: "Resort", area: "Lake Naivasha" },
       { name: "Camp Carnelley's", type: "Camp", area: "Lake Naivasha" }
     ],
+    latitude: -0.9080,
+    longitude: 36.3190,
+    locationName: "Hell's Gate National Park",
     relatedExperiences: []
   },
   {
@@ -761,8 +851,11 @@ export const destinations = [
       { name: "Nairobi Tented Camp", type: "Tented camp", area: "Inside park" },
       { name: "Hemingways Nairobi", type: "Luxury hotel", area: "Karen" }
     ],
+    latitude: -1.3615,
+    longitude: 36.8451,
+    locationName: "Nairobi National Park",
     relatedExperiences: []
   }
-  
+
 ]
 

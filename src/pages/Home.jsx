@@ -300,7 +300,7 @@ export default function Home() {
             <hr className="w-10 h-0.5 bg-white/50 border-none" />
           </div>
           <h2 className="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
-            "At Modus Safaris, we believe travel should be transformative—for the traveler and the destination. We promise unforgettable journeys, exceptional service, and responsible travel that leaves a positive footprint in Uganda."
+            "At Modus Safaris, we believe travel should be transformative—for the traveler and the destination. We deliver unforgettable journeys, exceptional service, and responsible travel that leaves a positive footprint in Uganda."
           </h2>
         </div>
       </section>

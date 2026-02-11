@@ -118,7 +118,7 @@ export default function About(){
                             </div>
                         </div>
                         <div className="flex-1 w-full">
-                            <div className="aspect-square md:aspect-4/3 rounded-2xl overflow-hidden shadow-xl">
+                            <div className="aspect-square md:aspect-6/7 rounded-2xl overflow-hidden shadow-xl">
                                 <img
                                     src="https://images.unsplash.com/photo-1761976671459-8a27e6b78c09?w=800&auto=format&fit=crop&q=80"
                                     alt="Safari landscape"

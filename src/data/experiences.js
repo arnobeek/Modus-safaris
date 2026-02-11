@@ -1,8 +1,3 @@
-/**
- * Experiences data for safari itineraries
- * Each experience has: slug, title, duration, pricing, itinerary, included/excluded
- */
-
 export const experiences = [
     {
         id: 1,
@@ -14,9 +9,9 @@ export const experiences = [
         summary: "Trek through Bwindi's misty ancient rainforest to encounter endangered mountain gorillas in their natural habitat—an experience that changes lives.",
         heroImage: "https://images.unsplash.com/photo-1653645800971-b46f2322da3c?w=1200&auto=format&fit=crop&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1614528767034-70de9fe166e0?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&auto=format&fit=crop&q=70"
+            "https://plus.unsplash.com/premium_photo-1664304378256-c05a27208980?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGdvcmlsbGElMjB0cmVra2luZ3xlbnwwfHwwfHx8MA%3D%3D",
+            "https://images.unsplash.com/photo-1731009917833-81c4579ad676?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGdvcmlsbGElMjB0cmVra2luZ3xlbnwwfHwwfHx8MA%3D%3Dhttps://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70",
+            "https://images.unsplash.com/photo-1673308328828-1fbd12d31a7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGdvcmlsbGElMjB0cmVra2luZ3xlbnwwfHwwfHx8MA%3D%3D"
         ],
         destination: "bwindi-impenetrable-forest",
         country: "Uganda",
@@ -87,11 +82,11 @@ export const experiences = [
         durationDays: 7,
         startingPrice: 4200,
         summary: "Witness the greatest wildlife spectacle on earth as millions of wildebeest and zebra cross the Serengeti plains in search of fresh grazing.",
-        heroImage: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=1200&auto=format&fit=crop&q=80",
+        heroImage: "https://images.unsplash.com/photo-1564101160531-4838e8a5f4e7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VyZW5nZXRpJTIwbWlncmF0aW9ufGVufDB8fDB8fHww",
         gallery: [
-            "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70"
+            "https://images.unsplash.com/photo-1560440976-a8a309ea5837?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2VyZW5nZXRpJTIwbWlncmF0aW9ufGVufDB8fDB8fHww",
+            "https://images.unsplash.com/photo-1673667618335-face21a8b1a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2VyZW5nZXRpJTIwbWlncmF0aW9ufGVufDB8fDB8fHww",
+            "https://images.unsplash.com/photo-1504509300398-bbc15e0c51f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHNlcmVuZ2V0aSUyMG1pZ3JhdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
         ],
         destination: "serengeti",
         country: "Tanzania",
@@ -182,11 +177,11 @@ export const experiences = [
         durationDays: 5,
         startingPrice: 3100,
         summary: "Experience Kenya's iconic Masai Mara with its endless plains, big cats, and rich Maasai culture in one of Africa's most celebrated wildlife reserves.",
-        heroImage: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&auto=format&fit=crop&q=80",
+        heroImage: "https://images.unsplash.com/photo-1535940587896-3a4e0ce292f4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG1hc2FpJTIwbWFyYSUyMGV4cGVyaWVuY2V8ZW58MHx8MHx8fDA%3D",
         gallery: [
-            "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?w=800&auto=format&fit=crop&q=70"
+            "https://images.unsplash.com/photo-1704552626012-ce6294155f2e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFzYWklMjBtYXJhJTIwZXhwZXJpZW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+            "https://images.unsplash.com/photo-1705465442928-32030d22aed6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFzYWklMjBtYXJhJTIwZXhwZXJpZW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+            "https://images.unsplash.com/photo-1740048264207-ad890ed15fd4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hc2FpJTIwbWFyYSUyMGV4cGVyaWVuY2V8ZW58MHx8MHx8fDA%3D"
         ],
         destination: "masai-mara",
         country: "Kenya",
@@ -265,9 +260,9 @@ export const experiences = [
         summary: "The ultimate Ugandan adventure combining gorilla trekking, chimpanzee tracking, and classic savanna safari across Uganda's finest national parks.",
         heroImage: "https://images.unsplash.com/photo-1614528767034-70de9fe166e0?w=1200&auto=format&fit=crop&q=80",
         gallery: [
-            "https://images.unsplash.com/photo-1653645800971-b46f2322da3c?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1704183683740-1400a49816b7?w=800&auto=format&fit=crop&q=70",
-            "https://images.unsplash.com/photo-1518709368567-b22d4217b91f?w=800&auto=format&fit=crop&q=70"
+            "https://images.unsplash.com/photo-1731406967626-1803b7c7e1a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dWdhbmRhJTIwd2lsZGxpZmV8ZW58MHx8MHx8fDA%3D",
+            "https://images.unsplash.com/photo-1731406862072-48ded3c09eee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHVnYW5kYSUyMHdpbGRsaWZlfGVufDB8fDB8fHww",
+            "https://images.unsplash.com/photo-1665775783400-0e32f57f5c92?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHVnYW5kYSUyMHdpbGRsaWZlfGVufDB8fDB8fHww"
         ],
         destination: "bwindi-impenetrable-forest",
         country: "Uganda",

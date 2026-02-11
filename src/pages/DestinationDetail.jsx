@@ -185,6 +185,28 @@ export default function DestinationDetail() {
         </div>
       </div>
 
+      <section id="location-map" className="py-12 md:py-16 bg-white px-4 sm:px-6 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-4xl">
+          <div className="flex items-center gap-3 mb-6">
+            <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
+            <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
+              Where This Destination Is Located
+            </span>
+          </div>
+          <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              title={`Map of ${destination.name}`}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0 }}
+              src={`https://www.google.com/maps?q=${destination.latitude || 0},${destination.longitude || 0}&hl=en&z=10&output=embed`}
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {galleryImages.length > 0 && (
         <div className="px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-16 bg-zinc-100">
           <div className="mx-auto max-w-6xl">

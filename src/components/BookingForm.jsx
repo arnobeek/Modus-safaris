@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useSearchParams } from "react-router-dom"
+import { useSearchParams, Link } from "react-router-dom"
 import { FormInput, FormCheckboxGroup, CheckboxButton, FormTextarea } from "./FormField"
 import { experiences, getExperienceBySlug } from "../data/experiences"
 import { sendBookingData } from "../services/emailService"
@@ -532,6 +532,18 @@ export default function BookingForm() {
                 onChange={(e) => updateField("notes", e.target.value)}
                 rows={5}
               />
+
+              <div className="flex items-start gap-3 pt-4">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  required
+                  className="mt-1 w-5 h-5 rounded border-gray-300 text-[#3a5a40] focus:ring-[#3a5a40]"
+                />
+                <label htmlFor="terms" className="text-sm text-gray-600">
+                  I have read and agree to the <Link to="/terms-and-conditions" target="_blank" className="text-[#3a5a40] underline hover:text-[#2f4a33]">Terms & Conditions</Link>. I understand the cancellation policy and booking requirements.
+                </label>
+              </div>
 
               {submitError && (
                 <div className="p-5 bg-red-50 text-red-700 rounded-2xl text-sm border border-red-100 italic animate-pulse">

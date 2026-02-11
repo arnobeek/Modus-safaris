@@ -11,6 +11,7 @@ import Booking from './pages/Booking'
 import DestinationDetail from './pages/DestinationDetail'
 import CountryDetail from './pages/CountryDetail'
 import NotFound from './pages/NotFound'
+import TermsAndConditions from './pages/TermsAndConditions'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/stories" element={<Stories />} />
         <Route path="/about" element={<About />} />
         <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
