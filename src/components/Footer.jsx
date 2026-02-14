@@ -50,6 +50,9 @@ export default function Footer() {
                     <Link to="/about" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">About Us</Link>
                     <Link to="/sustainability" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Sustainability</Link>
                     <Link to="/stories" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Travel Stories</Link>
+                    <Link to="/responsible-travel" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Responsible Travel</Link>
+                    <Link to="/health-and-safety" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Health & Safety</Link>
+                    <Link to="/supplier-charter" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Supplier Charter</Link>
                     <Link to="/booking" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Book a Trip</Link>
                     <a href="/Modus Safaris UG Limited Sustainability Report 2025.docx" download className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit flex items-center gap-2">
                         <span>Sustainability Report</span>
@@ -61,7 +64,7 @@ export default function Footer() {
                     <p className="text-lg font-bold font-heading tracking-wide mb-2">CONTACT</p>
                     <div>
                         <p className="font-semibold text-amber-300 mb-1">PHONE</p>
-                        <a href="tel:+256756733094" className="text-white/80 hover:text-white transition-colors block">+256-756-733-094</a>
+                        <a href="tel:+256763174100" className="text-white/80 hover:text-white transition-colors block">+256 763 174 100</a>
                     </div>
                     <div>
                         <p className="font-semibold text-amber-300 mb-1">EMAIL</p>
@@ -69,7 +72,7 @@ export default function Footer() {
                     </div>
                     <div>
                         <p className="font-semibold text-amber-300 mb-1">OFFICES</p>
-                        <p className="text-white/80">Mbarara, Uganda</p>
+                        <p className="text-white/80">Mirage Complex, Kitintale, Kampala</p>
                     </div>
                 </div>
 

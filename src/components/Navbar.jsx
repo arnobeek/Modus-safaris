@@ -143,8 +143,8 @@ export default function Navbar() {
         className={`fixed flex items-center justify-between px-6 md:px-10 w-full shadow py-2.5 z-50 transition-all duration-500 ${headerBg}`}
       >
         <Link to="/" className="flex items-center shrink-0" onClick={closeMenu}>
-          <img src={logo} alt="Modus" className="w-12" />
-          <h1 className="text-2xl font-extrabold text-[#3a5a40]">MODUS SAFARIS</h1>
+          <img src={logo} alt="Modus" className="w-20" />
+          <h1 className="text-2xl font-extrabold text-[#3a5a40]"></h1>
         </Link>
 
         <nav className="hidden md:flex justify-between gap-8 lg:gap-12">
@@ -203,7 +203,7 @@ export default function Navbar() {
             onClick={closeMenu}
             className="border border-[#3a5a40] px-6 py-3 mt-4 text-lg font-medium transition-all button-animation w-full max-w-xs inline-block text-center"
           >
-            PLAN YOUR JOURNEY
+            MAKE AN INQUIRY
           </Link>
         </nav>
       </div>

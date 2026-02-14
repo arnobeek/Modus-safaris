@@ -96,11 +96,11 @@ export default function About(){
                     <div className="flex flex-col lg:flex-row gap-12 items-start">
                         <div className="flex-1 flex flex-col gap-6">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 leading-tight">
-                                Modus Safaris (U) Limited
+                                Modus Safaris (UG) Limited
                             </h2>
                             <div className="flex flex-col gap-6 text-gray-600 text-lg leading-relaxed">
                                 <p>
-                                    Modus Safaris (U) Limited is a Ugandan-owned safari company dedicated to
+                                    Modus Safaris (UG) Limited is a Ugandan-owned safari company dedicated to
                                     delivering authentic, memorable, and responsible travel experiences across
                                     Uganda and the East African region. We specialize in crafting tailor-made
                                     safaris that connect travelers to Uganda's rich wildlife, diverse cultures,

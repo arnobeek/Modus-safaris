@@ -148,7 +148,7 @@ export default function BookingForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">Enquiry Sent!</h2>
+        <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">Inquiry Sent!</h2>
         <p className="text-gray-600 mb-10 text-lg leading-relaxed">
           Thank you for choosing Modus Safaris. We've received your request and our specialists will be in touch within 24 hours to begin crafting your journey.
         </p>
@@ -222,7 +222,7 @@ export default function BookingForm() {
             <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] space-y-10">
               <div className="space-y-8">
                 <FormCheckboxGroup label="Preferred Year" error={errors.year} columns="grid-cols-3">
-                  {["2025", "2026", "2027"].map((y) => (
+                  {["2026", "2027"].map((y) => (
                     <CheckboxButton
                       key={y}
                       id={`year-${y}`}

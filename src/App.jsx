@@ -12,6 +12,10 @@ import DestinationDetail from './pages/DestinationDetail'
 import CountryDetail from './pages/CountryDetail'
 import NotFound from './pages/NotFound'
 import TermsAndConditions from './pages/TermsAndConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import ResponsibleTravel from './pages/ResponsibleTravel'
+import HealthAndSafety from './pages/HealthAndSafety'
+import SupplierCharter from './pages/SupplierCharter'
 
 function App() {
   return (
@@ -31,6 +35,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/responsible-travel" element={<ResponsibleTravel />} />
+        <Route path="/health-and-safety" element={<HealthAndSafety />} />
+        <Route path="/supplier-charter" element={<SupplierCharter />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
