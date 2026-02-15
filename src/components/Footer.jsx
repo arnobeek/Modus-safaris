@@ -27,6 +27,11 @@ export default function Footer() {
                                 <FaFacebookF size={18} />
                             </div>
                         </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <div className='w-10 h-10 border border-white/30 flex items-center justify-center rounded-full hover:bg-white hover:text-[#3a5a40] transition-all duration-300'>
+                                <FaLinkedinIn size={18} />
+                            </div>
+                        </a>
 
                         <a href="mailto:info@modussafaris.com" aria-label="Email Us">
                             <div className='w-10 h-10 border border-white/30 flex items-center justify-center rounded-full hover:bg-white hover:text-[#3a5a40] transition-all duration-300'>
@@ -60,7 +65,6 @@ export default function Footer() {
                     <Link to="/health-and-safety" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Health & Safety</Link>
                     <Link to="/supplier-charter" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Supplier Charter</Link>
                     <Link to="/terms-and-conditions" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Terms & Conditions</Link>
-                    <Link to="/privacy" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Privacy Policy</Link>
                     <a href="/Modus Safaris UG Limited Sustainability Report 2025.docx" download className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit flex items-center gap-2">
                         <span>Sustainability Report</span>
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
