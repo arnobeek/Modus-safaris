@@ -35,7 +35,7 @@ export default function ExperienceCard({ experience }) {
           <div className="flex items-center justify-between">
             <span className="text-sm text-[#3a5a40] font-medium">{country}</span>
           </div>
-          <h3 className="text-xl md:text-2xl font-medium text-gray-900 group-hover:text-[#3a5a40] transition-colors">
+          <h3 className="text-xl md:text-2xl font-medium text-gray-900 group-hover:text-[#3a5a40] transition-colors break-words line-clamp-2 leading-tight">
             {title}
           </h3>
           <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">{summary}</p>

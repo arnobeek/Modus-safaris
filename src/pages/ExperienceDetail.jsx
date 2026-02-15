@@ -214,7 +214,7 @@ export default function ExperienceDetail() {
                 Book This Experience
               </Link>
               <p className="text-sm text-gray-500 text-center">
-                Free cancellation up to 30 days before
+                Subject to <Link to="/terms-and-conditions#cancellations" className="text-[#3a5a40] font-medium underline">Cancellation Policy</Link>
               </p>
 
               <hr className="border-gray-200" />
@@ -226,17 +226,12 @@ export default function ExperienceDetail() {
                   What's Included
                 </h4>
                 <ul className="space-y-2">
-                  {experience.included.slice(0, 5).map((item, index) => (
+                  {experience.included.map((item, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#3a5a40] mt-1.5 shrink-0" />
                       {item}
                     </li>
                   ))}
-                  {experience.included.length > 5 && (
-                    <li className="text-sm text-[#3a5a40] font-medium">
-                      +{experience.included.length - 5} more items
-                    </li>
-                  )}
                 </ul>
               </div>
 
@@ -247,7 +242,7 @@ export default function ExperienceDetail() {
                   Not Included
                 </h4>
                 <ul className="space-y-2">
-                  {experience.excluded.slice(0, 4).map((item, index) => (
+                  {experience.excluded.map((item, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
                       <span className="w-1.5 h-1.5 rounded-full bg-gray-400 mt-1.5 shrink-0" />
                       {item}

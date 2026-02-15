@@ -7,11 +7,10 @@ export default function Footer() {
 
     return (
         <div className='px-6 md:px-10 bg-[#3a5a40] pt-12 md:pt-16 pb-8 text-white font-ui'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 mb-12'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-8 mb-12'>
                 <div className='flex flex-col gap-4'>
                     <div className="flex items-center gap-2">
                         <img src={logo} className="w-16 md:w-20" alt="Modus Safaris Logo" />
-                        <h1 className="text-2xl md:text-3xl font-extrabold font-heading tracking-tight">MODUS SAFARIS</h1>
                     </div>
                     <p className="text-white/90 text-sm leading-relaxed max-w-xs">
                         Curating extraordinary East African journeys for the discerning traveler. Experience the wild in comfort and style.
@@ -50,10 +49,18 @@ export default function Footer() {
                     <Link to="/about" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">About Us</Link>
                     <Link to="/sustainability" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Sustainability</Link>
                     <Link to="/stories" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Travel Stories</Link>
-                    <Link to="/responsible-travel" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Responsible Travel</Link>
+                    <Link to="/booking" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Book a Trip</Link>
+                </div>
+
+                <div className='flex flex-col gap-4 text-sm'>
+                    <p className="text-lg font-bold font-heading tracking-wide mb-2">POLICIES</p>
+                    <Link to="/sustainability/policy" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Sustainability Policy</Link>
+                    <Link to="/code-of-conduct" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Code of Conduct</Link>
+                    <Link to="/responsible-travel" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Guest Travel Code</Link>
                     <Link to="/health-and-safety" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Health & Safety</Link>
                     <Link to="/supplier-charter" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Supplier Charter</Link>
-                    <Link to="/booking" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Book a Trip</Link>
+                    <Link to="/terms-and-conditions" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Terms & Conditions</Link>
+                    <Link to="/privacy" className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit">Privacy Policy</Link>
                     <a href="/Modus Safaris UG Limited Sustainability Report 2025.docx" download className="text-white/80 hover:text-amber-300 hover:translate-x-1 transition-all duration-300 w-fit flex items-center gap-2">
                         <span>Sustainability Report</span>
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>

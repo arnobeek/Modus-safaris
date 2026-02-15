@@ -31,8 +31,8 @@ export default function ResponsibleTravel() {
       </Helmet>
 
       {/* Header */}
-      <div className="bg-[#3a5a40] text-white py-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto text-center md:text-left">
+      <div className="bg-[#3a5a40] text-white py-20 px-6 md:px-12 lg:px-20 pt-16">
+        <div className="max-w-4xl mx-auto text-center md:text-left pt-16">
           <p className="text-sm tracking-[0.2em] uppercase mb-4 opacity-80">Sustainability</p>
           <h1 className="text-4xl md:text-5xl font-medium font-heading italic">
             Guest Responsible Travel Code
@@ -65,7 +65,7 @@ export default function ResponsibleTravel() {
           </aside>
 
           {/* Content */}
-          <div className="flex-1 space-y-16 text-gray-700 leading-relaxed text-lg">
+          <div className="flex-1 space-y-16 text-gray-700 leading-relaxed text-lg text-justify">
             
             <p className="text-gray-900 font-medium border-l-4 border-[#3a5a40] pl-6 py-2 bg-gray-50">
               At Modus Safaris, we believe responsible travel creates positive experiences for our guests while protecting Uganda’s wildlife, environment, and communities. This code outlines simple principles to help you travel respectfully and sustainably.

@@ -38,13 +38,24 @@ export default function Sustainability() {
         </p>
       </header>
 
-      {/* Our Commitment */}
+      {/* Policy Statement */}
       <section className="px-6 md:px-12 lg:px-20 py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-8 font-heading">Our Core Philosophy</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-            At Modus Safaris, sustainability is not an add-on; it is the foundation of everything we do. We are committed to minimizing our environmental footprint while maximizing the positive impact of tourism on local economies and ecosystems.
-            </p>
+        <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-8 font-heading text-center">Policy Statement</h2>
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700 leading-relaxed text-center">
+                Modus Safaris (UG) Limited is committed to operating as a responsible, ethical, and sustainable safari company within Uganda. We recognise tourism as a driver for conservation, community development, and inclusive economic growth when managed responsibly. 
+              </p>
+              <div className="flex justify-center">
+                <Link 
+                  to="/sustainability/policy" 
+                  className="inline-flex items-center gap-2 text-[#3a5a40] font-medium hover:gap-3 transition-all duration-300 border-b border-[#3a5a40] pb-1"
+                >
+                  Read full policy statement & operational guidelines
+                  <HiOutlineGlobeAlt className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
         </div>
       </section>
 

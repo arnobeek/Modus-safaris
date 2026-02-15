@@ -177,58 +177,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Tailor-Made Journey Form */}
-      {/* <div className="flex flex-col gap-8 md:gap-10 min-h-0 md:min-h-[60vh] shadow z-50 mx-4 sm:mx-6 md:mx-auto md:max-w-5xl -mt-16 md:-mt-20 bg-white px-4 sm:px-6 md:px-8 py-8 md:py-10 mb-16 md:mb-20">
-        <div>
-          <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900">Tailor-Made Journey</p>
-          <p className="text-gray-600 text-sm sm:text-base">Design your perfect East African adventure</p>
-        </div>
-        <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-5">
-          <div className="flex flex-col gap-3 w-full">
-            <label className="text-gray-600 text-sm">DESTINATION</label>
-            <select className="text-gray-500 bg-transparent">
-              <option>Select a destination</option>
-              {destinations.map((d, index) => (
-                <option value={d} key={index}>
-                  {d}
-                </option>
-              ))}
-            </select>
-            <hr />
-          </div>
-          <div className="flex flex-col gap-3 w-full">
-            <label className="text-gray-600 text-sm">DURATION</label>
-            <select className="text-gray-500 bg-transparent">
-              <option>Select duration</option>
-              {durations.map((d, index) => (
-                <option value={d} key={index}>
-                  {d}
-                </option>
-              ))}
-            </select>
-            <hr />
-          </div>
-          <div className="flex flex-col gap-3 w-full">
-            <label className="text-gray-600 text-sm">TRAVEL STYLE</label>
-            <select className="text-gray-500 bg-transparent">
-              <option>Select style</option>
-              {travelStyles.map((t, index) => (
-                <option value={t} key={index}>
-                  {t}
-                </option>
-              ))}
-            </select>
-            <hr />
-          </div>
-        </div>
-        <button
-          className="w-full sm:w-60 px-4 py-3 sm:py-2 text-lg shadow font-medium bg-[#3a5a40] text-white hover:cursor-pointer hover:scale-[1.02] transition-all duration-300"
-          onClick={() => navigate("/experiences")}
-        >
-          EXPLORE JOURNEYS
-        </button>
-      </div> */}
-
       {/* Featured Experiences */}
       <section className="px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -304,7 +252,7 @@ export default function Home() {
             <hr className="w-10 h-0.5 bg-white/50 border-none" />
           </div>
           <h2 className="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
-            "At Modus Safaris, we believe travel should be transformative—for the traveler and the destination. We deliver unforgettable journeys, exceptional service, and responsible travel that leaves a positive footprint in Uganda."
+            "At Modus Safaris, we believe travel should be transformative—for the traveler and the destination. We deliver unforgettable journeys, exceptional service, and responsible travel that leaves a positive footprint in East Africa."
           </h2>
         </div>
       </section>

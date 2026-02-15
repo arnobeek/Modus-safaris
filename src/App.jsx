@@ -16,6 +16,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import ResponsibleTravel from './pages/ResponsibleTravel'
 import HealthAndSafety from './pages/HealthAndSafety'
 import SupplierCharter from './pages/SupplierCharter'
+import SustainabilityPolicy from './pages/SustainabilityPolicy'
+import CodeOfConduct from './pages/CodeOfConduct'
 
 function App() {
   return (
@@ -34,11 +36,13 @@ function App() {
         <Route path="/stories" element={<Stories />} />
         <Route path="/about" element={<About />} />
         <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/sustainability/policy" element={<SustainabilityPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/responsible-travel" element={<ResponsibleTravel />} />
         <Route path="/health-and-safety" element={<HealthAndSafety />} />
         <Route path="/supplier-charter" element={<SupplierCharter />} />
+        <Route path="/code-of-conduct" element={<CodeOfConduct />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

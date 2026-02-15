@@ -158,7 +158,7 @@ export default function Navbar() {
             to="/booking"
             className="border border-[#3a5a40] px-6 py-2 hover:cursor-pointer hover:shadow-lg text-lg font-medium transition-all button-animation inline-block"
           >
-            MAKE INQUIRY
+            MAKE AN INQUIRY
           </Link>
         </div>
 

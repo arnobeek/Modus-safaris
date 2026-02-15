@@ -78,7 +78,7 @@ export default function CountryDetail() {
               Overview
             </a>
             <a href="#parks" className="hover:text-[#3a5a40] whitespace-nowrap uppercase">
-              Famous Parks
+              Places To Visit
             </a>
             <a href="#experiences" className="hover:text-[#3a5a40] whitespace-nowrap uppercase">
               Safari Itineraries
@@ -132,7 +132,7 @@ export default function CountryDetail() {
           <div className="flex items-center gap-3 mb-10">
             <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
             <h2 className="text-3xl md:text-4xl font-medium text-gray-900">
-              Famous Parks in {country.name}
+              Places To Visit in {country.name}
             </h2>
           </div>
           
