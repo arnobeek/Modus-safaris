@@ -211,7 +211,7 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">7. Child Protection and Safeguarding</h2>
               </div>
               <p>
-                Modus Safaris maintains a strict <Link to="/child-protection-policy" className="text-[#3a5a40] hover:underline">child protection policy</Link>. Guests must:
+                Modus Safaris maintains a strict <Link to="/child-protection-policy" className="text-[#3a5a40] underline">child protection policy</Link>. Guests must:
               </p>
               <ul className="mt-4 space-y-3 pl-6">
                 <li className="list-disc">Never engage in any form of child exploitation or abuse.</li>
