@@ -35,7 +35,7 @@ export default function HealthAndSafety() {
           <p className="text-sm tracking-widest uppercase mb-4 opacity-80">Safety First</p>
           <h1 className="text-4xl md:text-5xl font-medium font-heading">Health & Safety for Our Clients</h1>
           <p className="mt-6 text-lg max-w-2xl opacity-90 leading-relaxed">
-            At Modus Safaris, the health, safety, and wellbeing of our clients is a core operational priority.
+            At Modus Safaris, the health, safety, and wellbeing of our clients is a core operational priority. We are committed to providing safe, well-managed, and professionally guided safari experiences across Uganda, while maintaining flexibility and comfort in remote and natural environments.
           </p>
         </div>
       </div>

@@ -169,7 +169,10 @@ export default function TermsAndConditions() {
               </div>
               <p className="mt-6 font-medium text-gray-900">General Rule: No refunds will be considered under any circumstances once a booking is confirmed.</p>
               <p className="mt-4 italic">
-                Exceptional Circumstances: A refund may be considered only in the event of the death or hospitalisation of the affected client, subject to the submission of required documentation (Original death certificate or full certified medical records and sworn affidavit).
+                Exceptional Circumstances: A refund may be considered only in the event of the death or hospitalisation of the affected client, subject to the submission of required documentation (Original death certificate in the event of death or full certified medical records and sworn affidavit in the event of hospitalization).
+              </p>
+              <p>
+                This exception applies only to the individual directly affected and does not apply to other members of the group. Clients are strongly advised to obtain comprehensive travel insurance to cover such eventualities as a first recourse.
               </p>
             </section>
 

@@ -68,7 +68,7 @@ export default function ResponsibleTravel() {
           <div className="flex-1 space-y-16 text-gray-700 leading-relaxed text-lg text-justify">
             
             <p className="text-gray-900 font-medium border-l-4 border-[#3a5a40] pl-6 py-2 bg-gray-50">
-              At Modus Safaris, we believe responsible travel creates positive experiences for our guests while protecting Uganda’s wildlife, environment, and communities. This code outlines simple principles to help you travel respectfully and sustainably.
+              At Modus Safaris, we believe responsible travel creates positive experiences for our guests while protecting Uganda’s wildlife, environment, and communities. This Guest Responsible Travel Code outlines simple principles to help you travel respectfully and sustainably during your safari.
             </p>
 
             <section id="respect-wildlife" className="scroll-mt-28 group">

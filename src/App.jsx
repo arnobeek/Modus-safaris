@@ -18,6 +18,7 @@ import HealthAndSafety from './pages/HealthAndSafety'
 import SupplierCharter from './pages/SupplierCharter'
 import SustainabilityPolicy from './pages/SustainabilityPolicy'
 import CodeOfConduct from './pages/CodeOfConduct'
+import ChildProtectionPolicy from './pages/ChildProtectionPolicy'
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/health-and-safety" element={<HealthAndSafety />} />
         <Route path="/supplier-charter" element={<SupplierCharter />} />
         <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+        <Route path="/child-protection-policy" element={<ChildProtectionPolicy />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

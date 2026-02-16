@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async"
 import Footer from "../components/Footer"
 import { HiOutlineScale, HiOutlineGlobeAlt, HiOutlineShieldCheck, HiOutlineHeart, HiOutlineUserGroup, HiOutlineLightBulb, HiOutlineExclamationCircle, HiOutlineUserCircle } from "react-icons/hi"
 import { useEffect } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 const sections = [
   { id: "purpose", title: "1. Purpose", icon: HiOutlineLightBulb },
@@ -139,15 +139,15 @@ export default function CodeOfConduct() {
               <div className="mt-6 bg-red-50 p-6 rounded-xl border border-red-100">
                 <p className="font-bold text-red-800 mb-4 uppercase text-sm tracking-wider">Prohibited Activities:</p>
                 <ul className="space-y-3 text-red-900/80">
-                  <li className="list-disc ml-4">Hunting, capturing, injuring, or killing any wildlife species unless explicitly permitted under licensed programs.</li>
-                  <li className="list-disc ml-4">Purchasing, collecting, or transporting wildlife products such as ivory, skins, bones, horns, shells, etc.</li>
+                  <li className="list-disc ml-4">Hunting, capturing, injuring, or killing any wildlife species unless explicitly permitted under licensed, legal, and regulated conservation programs.</li>
+                  <li className="list-disc ml-4">Purchasing, collecting, or transporting wildlife products such as ivory, skins, bones, horns, shells, feathers, or other animal parts.</li>
                   <li className="list-disc ml-4">Participating in activities involving endangered, threatened, or protected species.</li>
                   <li className="list-disc ml-4">Supporting illegal wildlife trade directly or indirectly.</li>
                   <li className="list-disc ml-4">Removing plants, animals, or natural materials from protected areas.</li>
                 </ul>
               </div>
               <p className="mt-6">
-                Guests must comply fully with all national wildlife protection laws and international conservation regulations, including CITES. Any violation may result in immediate termination of the safari and reporting to relevant authorities.
+                Guests must comply fully with all national wildlife protection laws and international conservation regulations, including CITES (Convention on International Trade in Endangered Species). Any violation may result in immediate termination of the safari and reporting to relevant authorities.
               </p>
             </section>
 
@@ -166,6 +166,7 @@ export default function CodeOfConduct() {
                 <li className="list-disc">Avoid damaging plants, ecosystems, or cultural sites.</li>
                 <li className="list-disc">Use water and electricity responsibly.</li>
               </ul>
+              <p className="mt-4">Responsible environmental practices help preserve destinations for future generations.</p>
             </section>
 
             <section id="guest-community" className="scroll-mt-28">
@@ -183,6 +184,7 @@ export default function CodeOfConduct() {
                 <li className="list-disc">Avoid giving money or gifts directly to children.</li>
                 <li className="list-disc">Support local communities through responsible purchases.</li>
               </ul>
+              <p className="mt-4">Respectful cultural interaction ensures positive community relationships.</p>
             </section>
 
             <section id="guest-safety" className="scroll-mt-28">
@@ -191,8 +193,16 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">6. Health, Safety, and Responsible Behaviour</h2>
               </div>
               <p>
-                Guest safety is a priority. Guests must follow safety instructions provided by guides, inform staff of any medical conditions, and avoid illegal drugs or disruptive behaviour. Unsafe conduct may result in removal from the tour.
+                Guest safety is a priority. Guests must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Follow safety instructions provided by guides.</li>
+                <li className="list-disc">Inform staff of any medical conditions.</li>
+                <li className="list-disc">Avoid illegal drugs and unlawful activities.</li>
+                <li className="list-disc">Behave respectfully toward staff, guests, and communities.</li>
+                <li className="list-disc">Avoid disruptive, abusive, or unsafe behaviour.</li>
+              </ul>
+              <p className="mt-4">Unsafe conduct may result in removal from the tour.</p>
             </section>
 
             <section id="guest-child" className="scroll-mt-28">
@@ -201,8 +211,15 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">7. Child Protection and Safeguarding</h2>
               </div>
               <p>
-                Modus Safaris maintains a strict child protection policy. Guests must never engage in any form of child exploitation or abuse, and must respect children’s dignity, privacy, and rights. Report any concerns to staff immediately.
+                Modus Safaris maintains a strict <Link to="/child-protection-policy" className="text-[#3a5a40] hover:underline">child protection policy</Link>. Guests must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Never engage in any form of child exploitation or abuse.</li>
+                <li className="list-disc">Respect children’s dignity, privacy, and rights.</li>
+                <li className="list-disc">Avoid inappropriate interactions with children.</li>
+                <li className="list-disc">Report any concerns to staff immediately.</li>
+              </ul>
+              <p className="mt-4">Child protection is a shared responsibility.</p>
             </section>
 
             <div className="bg-[#3a5a40]/5 p-8 rounded-2xl mb-12 border border-[#3a5a40]/10">
@@ -215,8 +232,16 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">8. Professional Conduct and Integrity</h2>
               </div>
               <p>
-                Staff must demonstrate professionalism and ethical conduct at all times, acting honestly and treating all individuals with respect.
+                Staff must demonstrate professionalism and ethical conduct at all times. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Act honestly, responsibly, and professionally.</li>
+                <li className="list-disc">Treat guests and communities with respect.</li>
+                <li className="list-disc">Provide accurate information.</li>
+                <li className="list-disc">Avoid corruption, bribery, or unethical practices.</li>
+                <li className="list-disc">Represent Modus Safaris professionally.</li>
+              </ul>
+              <p className="mt-4">Professional conduct builds trust and ensures quality service.</p>
             </section>
 
             <section id="staff-wildlife" className="scroll-mt-28">
@@ -225,8 +250,16 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">9. Wildlife Protection and Anti-Poaching Responsibilities</h2>
               </div>
               <p>
-                All staff and guides are required to actively prevent and discourage wildlife harvesting and illegal wildlife trade. facilitating access to wildlife for illegal purposes is strictly prohibited.
+                All Modus Safaris staff and guides are required to actively prevent and discourage wildlife harvesting and illegal wildlife trade. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Never participate in or support illegal hunting, poaching, or wildlife trade.</li>
+                <li className="list-disc">Never transport, sell, or assist in the transport of illegal wildlife products.</li>
+                <li className="list-disc">Educate guests on wildlife conservation and legal protections.</li>
+                <li className="list-disc">Immediately report any suspected poaching, illegal wildlife activity, or wildlife trafficking to park authorities and management.</li>
+                <li className="list-disc">Ensure all wildlife viewing activities are conducted ethically and legally.</li>
+              </ul>
+              <p className="mt-4">Staff is strictly prohibited from facilitating access to wildlife for illegal purposes.</p>
             </section>
 
             <section id="staff-env" className="scroll-mt-28">
@@ -235,9 +268,16 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">10. Environmental Protection Responsibilities</h2>
               </div>
               <p>
-                Staff must promote sustainable environmental practices, educate guests on responsible tourism, and report environmental violations.
+                Staff must promote sustainable environmental practices. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Educate guests on responsible tourism.</li>
+                <li className="list-disc">Prevent environmental damage.</li>
+                <li className="list-disc">Promote conservation awareness.</li>
+                <li className="list-disc">Report environmental violations.</li>
+              </ul>
             </section>
+            <p className="mt-4">Environmental protection ensures sustainable tourism.</p>
 
             <section id="staff-safety" className="scroll-mt-28">
               <div className="flex items-center gap-3 mb-6">
@@ -245,8 +285,15 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">11. Health, Safety, and Duty of Care</h2>
               </div>
               <p>
-                Staff is responsible for ensuring safety through briefings, equipment maintenance, and responsible driving.
+                Staff is responsible for ensuring safety. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Conduct safety briefings.</li>
+                <li className="list-disc">Maintain vehicles and equipment safely.</li>
+                <li className="list-disc">Drive responsibly.</li>
+                <li className="list-disc">Respond effectively to emergencies.</li>
+              </ul>
+              <p className="mt-4">Safety is a fundamental obligation.</p>
             </section>
 
             <section id="staff-equality" className="scroll-mt-28">
@@ -255,8 +302,14 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">12. Equality, Non-Discrimination, and Respect</h2>
               </div>
               <p>
-                Modus Safaris promotes equality and respect. Staff must avoid discrimination and respect diversity and cultural differences.
+                Modus Safaris promotes equality and respect. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Treat all individuals fairly and respectfully.</li>
+                <li className="list-disc">Avoid discrimination or harassment.</li>
+                <li className="list-disc">Respect diversity and cultural differences.</li>
+              </ul>
+              <p className="mt-4">A respectful environment ensures positive experiences.</p>
             </section>
 
             <section id="staff-child" className="scroll-mt-28">
@@ -265,8 +318,14 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">13. Child Protection Responsibilities</h2>
               </div>
               <p>
-                Staff must protect children and follow child protection policies at all times.
+                Staff must protect children and follow all guidelines in our <Link to="/child-protection-policy" className="text-[#3a5a40] hover:underline">child protection policy</Link>. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Never engage in child exploitation.</li>
+                <li className="list-disc">Report suspected abuse immediately.</li>
+                <li className="list-disc">Follow child protection policies.</li>
+              </ul>
+              <p className="mt-4">Child safeguarding is mandatory.</p>
             </section>
 
             <section id="staff-community" className="scroll-mt-28">
@@ -275,8 +334,14 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">14. Responsible Community Engagement</h2>
               </div>
               <p>
-                Staff must support ethical community tourism and ensure fair community benefits.
+                Staff must support ethical community tourism. Staff must:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Respect community rights and dignity.</li>
+                <li className="list-disc">Ensure fair community benefits.</li>
+                <li className="list-disc">Promote respectful cultural interactions.</li>
+              </ul>
+              <p className="mt-4">Responsible tourism supports sustainable livelihoods.</p>
             </section>
 
             <section id="compliance" className="scroll-mt-28">
@@ -285,8 +350,15 @@ export default function CodeOfConduct() {
                 <h2 className="text-2xl font-medium text-gray-900 font-heading uppercase italic">15. Compliance and Enforcement</h2>
               </div>
               <p>
-                Failure to comply with this Code of Conduct may result in removal from tours, disciplinary action, or legal action.
+                Failure to comply with this Code of Conduct may result in:
               </p>
+              <ul className="mt-4 space-y-3 pl-6">
+                <li className="list-disc">Removal from tours.</li>
+                <li className="list-disc">Disciplinary action.</li>
+                <li className="list-disc">Termination of employment.</li>
+                <li className="list-disc">Legal action.</li>
+              </ul>
+              <p className="mt-4">All violations must be reported to management.</p>
             </section>
 
             <section id="implementation" className="scroll-mt-28 pb-20">

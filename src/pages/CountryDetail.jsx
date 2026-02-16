@@ -87,42 +87,184 @@ export default function CountryDetail() {
         </div>
       </div>
 
-      {/* Overview Section */}
+      {/* Overview & Travel Guide Section */}
       <section id="overview" className="px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-24 bg-white scroll-mt-32">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-              <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
-                Discover {country.name}
-              </span>
-            </div>
-            <p className="text-xl text-gray-700 leading-relaxed mb-8">
-              {country.description}
-            </p>
-            
-            <h3 className="text-xl font-medium text-gray-900 mb-4">Highlights</h3>
-            <ul className="grid grid-cols-1 gap-3">
-              {country.highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-700">
-                  <span className="w-2 h-2 mt-2 rounded-full bg-[#3a5a40] shrink-0" />
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="bg-zinc-50 p-8 rounded-2xl border border-zinc-100">
-            <h3 className="text-xl font-medium text-gray-900 mb-6">Quick Facts</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
-              {Object.entries(country.facts).map(([key, value]) => (
-                <div key={key}>
-                  <p className="text-xs font-semibold text-[#3a5a40] tracking-wider uppercase mb-1">{key}</p>
-                  <p className="text-gray-800">{value}</p>
+        <div className="max-w-6xl mx-auto">
+          {country.guide ? (
+            <div className="space-y-24">
+              {/* 1. Welcome Section */}
+              <div className="max-w-4xl">
+                <div className="flex items-center gap-3 mb-8">
+                  <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
+                  <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase italic">
+                    {country.guide.welcome.title}
+                  </span>
                 </div>
-              ))}
+                <div className="space-y-6 text-xl text-gray-700 leading-relaxed text-justify">
+                  {country.guide.welcome.content.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* 2. Why Captivates Section */}
+              <div className="items-start">
+                <div className="bg-[#3a5a40]/5 p-10 rounded-3xl border border-[#3a5a40]/10">
+                  <h3 className="text-2xl md:text-3xl font-medium text-gray-900 mb-6 font-heading italic uppercase">
+                    {country.guide.whyVisit.title}
+                  </h3>
+                  <p className="text-gray-700 mb-8 italic">
+                    {country.guide.whyVisit.intro}
+                  </p>
+                  <ul className="space-y-4">
+                    {country.guide.whyVisit.highlights.map((h, i) => (
+                      <li key={i} className="flex items-start gap-4 text-gray-700">
+                        <span className="w-2 h-2 mt-2.5 rounded-full bg-[#3a5a40] shrink-0" />
+                        <span className="leading-snug">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-8 font-medium text-[#3a5a40] italic">
+                    {country.guide.whyVisit.outro}
+                  </p>
+                </div>
+              </div>
+
+              {/* 3. Signature Destinations */}
+              <div>
+                <div className="text-center mb-16">
+                  <h3 className="text-3xl md:text-5xl font-medium text-gray-900 font-heading italic uppercase">
+                    {country.guide.destinations.title}
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {country.guide.destinations.items.map((item, i) => (
+                    <div key={i} className="group p-8 rounded-2xl bg-zinc-50 border border-zinc-100 hover:bg-white hover:shadow-xl hover:shadow-zinc-200/50 transition-all duration-300">
+                      <h4 className="text-xl font-medium text-gray-900 mb-4 group-hover:text-[#3a5a40] transition-colors leading-tight">
+                        {item.name}
+                      </h4>
+                      <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 4. When to Visit & Experiences */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="bg-zinc-900 text-white p-10 rounded-3xl shadow-2xl">
+                  <h3 className="text-2xl font-medium mb-6 font-heading italic uppercase tracking-wider">
+                    {country.guide.seasons.title}
+                  </h3>
+                  <p className="opacity-80 mb-8 italic">{country.guide.seasons.text}</p>
+                  <div className="space-y-6">
+                    {country.guide.seasons.categories.map((cat, i) => (
+                      <div key={i} className="border-l-2 border-[#3a5a40] pl-6">
+                        <p className="text-sm uppercase tracking-widest text-[#588157] font-bold mb-1">{cat.label}</p>
+                        <p className="text-xl font-light">{cat.months}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-10 pt-6 border-t border-white/10 text-sm opacity-60 italic">
+                    {country.guide.seasons.outro}
+                  </p>
+                </div>
+
+                <div className="bg-[#3a5a40] text-white p-10 rounded-3xl shadow-2xl">
+                  <h3 className="text-2xl font-medium mb-6 font-heading italic uppercase tracking-wider">
+                    {country.guide.experiences.title}
+                  </h3>
+                  <ul className="space-y-4">
+                    {country.guide.experiences.items.map((item, i) => (
+                      <li key={i} className="flex items-center gap-4">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#a3b18a] shrink-0" />
+                        <span className="text-lg font-light tracking-wide">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-10 pt-6 border-t border-white/10 text-sm opacity-80 italic">
+                    {country.guide.experiences.outro}
+                  </p>
+                </div>
+              </div>
+
+              {/* 5. Culture & Meaning */}
+              <div className="max-w-4xl mx-auto text-center">
+                <h3 className="text-3xl md:text-4xl font-medium text-gray-900 mb-8 font-heading italic uppercase">
+                  {country.guide.culture.title}
+                </h3>
+                <div className="space-y-6 text-xl text-gray-700 leading-relaxed italic">
+                  {country.guide.culture.content.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* 6. Responsible Travel */}
+              <div className="relative overflow-hidden bg-white border-2 border-[#3a5a40]/10 p-12 rounded-[3rem] text-center">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#3a5a40]/5 rounded-full -mr-32 -mt-32 blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#3a5a40]/5 rounded-full -ml-32 -mb-32 blur-3xl" />
+                
+                <h3 className="text-2xl font-medium text-[#3a5a40] mb-4 font-heading italic uppercase tracking-widest">
+                  {country.guide.responsibleTravel.title}
+                </h3>
+                <p className="text-xl text-gray-900 font-medium mb-8">
+                  {country.guide.responsibleTravel.intro}
+                </p>
+                <p className="text-gray-600 mb-8 italic">
+                  {country.guide.responsibleTravel.outro}
+                </p>
+                <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-10">
+                  {country.guide.responsibleTravel.points.map((p, i) => (
+                    <div key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#3a5a40]" />
+                      {p}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-2xl font-heading text-[#3a5a40] italic">
+                  "{country.guide.responsibleTravel.closing}"
+                </p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
+                  <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">
+                    Discover {country.name}
+                  </span>
+                </div>
+                <p className="text-xl text-gray-700 leading-relaxed mb-8">
+                  {country.description}
+                </p>
+                
+                <h3 className="text-xl font-medium text-gray-900 mb-4">Highlights</h3>
+                <ul className="grid grid-cols-1 gap-3">
+                  {country.highlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start gap-3 text-gray-700">
+                      <span className="w-2 h-2 mt-2 rounded-full bg-[#3a5a40] shrink-0" />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="bg-zinc-50 p-8 rounded-2xl border border-zinc-100">
+                <h3 className="text-xl font-medium text-gray-900 mb-6">Quick Facts</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
+                  {Object.entries(country.facts).map(([key, value]) => (
+                    <div key={key}>
+                      <p className="text-xs font-semibold text-[#3a5a40] tracking-wider uppercase mb-1">{key}</p>
+                      <p className="text-gray-800">{value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

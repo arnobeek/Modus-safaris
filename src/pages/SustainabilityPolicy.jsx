@@ -114,24 +114,24 @@ export default function SustainabilityPolicy() {
               </div>
               <div className="prose prose-zinc max-w-none text-gray-700 leading-relaxed space-y-4">
                 <p>
-                  Modus Safaris is committed to protecting the natural environment and reducing its ecological footprint. Environmental considerations are integrated into itinerary design, supplier selection, transport planning, and guest management. We prioritise efficient use of natural resources, pollution prevention, and ecosystem protection.
+                  Modus Safaris is committed to protecting the natural environment and reducing its ecological footprint. Environmental considerations are integrated into itinerary design, supplier selection, transport planning, and guest management. We prioritise efficient use of natural resources, pollution prevention, and ecosystem protection. Environmental responsibility is shared among staff, suppliers, and guests. Continuous improvement in environmental performance is a core operational objective.
                 </p>
                 <div className="bg-zinc-50 p-6 rounded-xl space-y-6">
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">3.1 Transportation & Mobility</h4>
-                    <p className="text-sm">We operate well-maintained vehicles, train drivers in fuel-efficient techniques, and plan routes to minimise emissions. alternatives such as shared transfers or domestic flights are considered to reduce environmental impact.</p>
+                    <p className="text-sm">Transportation is a key component of safari operations and environmental impact. Modus Safaris operates and contracts vehicles that are roadworthy, well maintained, and compliant with Ugandan transport regulations. Drivers are trained in fuel-efficient and defensive driving techniques. Routes are planned to minimise unnecessary driving and reduce emissions. Where feasible, alternatives such as shared transfers, domestic flights, or rail-connected travel segments are considered to reduce environmental impact.</p>
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">3.2 Energy Management</h4>
-                    <p className="text-sm">We promote responsible energy use across offices and safari operations, preference being given to accommodation partners using renewable energy like solar power.</p>
+                    <p className="text-sm">The company promotes responsible energy use across offices, safari operations, and partner facilities. Energy-efficient practices such as switching off unused equipment and limiting generator use are encouraged. Preference is given to accommodation partners using renewable energy solutions such as solar power. Vehicle idling is discouraged during stops and wildlife viewing. Staff awareness and supplier engagement support ongoing reductions in energy consumption.</p>
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">3.3 Water Stewardship</h4>
-                    <p className="text-sm">We promote responsible water use among staff, guests, and suppliers. Guests are encouraged to reduce laundry frequency and use water responsibly.</p>
+                    <p className="text-sm">Modus Safaris recognises water as a critical and limited resource in many parts of Uganda. Responsible water use is promoted among staff, guests, and suppliers. Guests are encouraged to reduce laundry frequency and use water responsibly. Suppliers are encouraged to adopt water-efficient technologies where possible. Water stewardship is considered during accommodation selection and supplier evaluation.</p>
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">3.4 Waste Management & Pollution Control</h4>
-                    <p className="text-sm">We minimise waste generation and pollution. Single-use plastics are actively discouraged, and we promote recycling where infrastructure allows.</p>
+                    <p className="text-sm">The company seeks to minimise waste generation and pollution throughout its operations. Single-use plastics are actively discouraged, and guests are encouraged to use reusable water bottles. Waste separation, recycling, and reuse are promoted where local infrastructure allows. All waste is disposed of responsibly in compliance with Ugandan environmental regulations. Guides are responsible for ensuring that natural areas are left clean and undisturbed.</p>
                   </div>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function SustainabilityPolicy() {
                   Wildlife conservation is central to Modus Safaris’ operations. The company strictly complies with all Uganda Wildlife Authority (UWA) regulations and protected area guidelines.
                 </p>
                 <p>
-                  Wildlife encounters are conducted in a non-invasive and ethical manner to avoid stress or disturbance. Activities involving exploitation, illegal trade, or unethical interactions with wildlife are strictly prohibited. Clients are educated on responsible wildlife viewing behaviour.
+                  Wildlife encounters are conducted in a non-invasive and ethical manner to avoid stress or disturbance. Activities involving exploitation, illegal trade, or unethical interactions with wildlife are strictly prohibited. Clients are educated on responsible wildlife viewing behaviour before and during safaris.
                 </p>
               </div>
             </section>
@@ -162,7 +162,7 @@ export default function SustainabilityPolicy() {
                   Modus Safaris recognises host communities as essential partners in sustainable tourism. Community engagement is based on respect, consultation, consent, and shared benefit.
                 </p>
                 <p>
-                  Tourism activities are designed to generate income, employment, and skills development at the local level. Community visits are organised in collaboration with local leaders and partners. Long-term partnerships are encouraged.
+                  Tourism activities are designed to generate income, employment, and skills development at the local level. Community visits are organised in collaboration with local leaders and partners. Long-term partnerships are encouraged to support sustainable local development rather than one-off engagements.
                 </p>
               </div>
             </section>
@@ -177,7 +177,7 @@ export default function SustainabilityPolicy() {
                   Modus Safaris is committed to fair trade principles in all procurement and contracting processes. The company ensures fair pricing, transparent contracting, and timely payments to suppliers and community partners.
                 </p>
                 <p>
-                  Local sourcing is prioritised to maximise economic benefits within Uganda. Exploitative purchasing practices are avoided, and suppliers are encouraged to uphold fair labour conditions.
+                  Local sourcing is prioritised to maximise economic benefits within Uganda. Exploitative purchasing practices are avoided, and suppliers are encouraged to uphold fair labour conditions. Ethical procurement considerations are integrated into supplier selection, negotiation, and ongoing relationship management.
                 </p>
               </div>
             </section>
@@ -192,7 +192,7 @@ export default function SustainabilityPolicy() {
                   Modus Safaris is committed to fair, lawful, and ethical employment practices. Employees are provided with fair wages and working conditions in compliance with Ugandan labour laws.
                 </p>
                 <p>
-                  A safe and healthy working environment is prioritised. Continuous training is provided on sustainability, safety, customer service, and destination knowledge.
+                  A safe and healthy working environment is prioritised. Continuous training is provided on sustainability, safety, customer service, and destination knowledge. Professional development and skills growth are encouraged to support long-term career progression.
                 </p>
               </div>
             </section>
@@ -207,7 +207,7 @@ export default function SustainabilityPolicy() {
                   The safety of clients, staff, and partners is a core operational priority. Risk assessments are conducted for all activities and destinations.
                 </p>
                 <p>
-                  Vehicles are regularly inspected and maintained. Guides and drivers are trained in first aid, emergency response, and safety procedures. Health and safety information is communicated clearly to clients.
+                  Vehicles are regularly inspected and maintained to ensure roadworthiness. Guides and drivers are trained in first aid, emergency response, and safety procedures. Health and safety information is communicated clearly to clients before and during travel.
                 </p>
               </div>
             </section>
@@ -222,7 +222,7 @@ export default function SustainabilityPolicy() {
                   Modus Safaris maintains zero tolerance for sexual exploitation, abuse, or harassment in any form.
                 </p>
                 <p>
-                  This applies to staff, suppliers, contractors, guides, drivers, and clients. The company strictly prohibits child sexual exploitation, including any form of child sex tourism. Any suspected incidents are addressed through immediate corrective action in line with Ugandan law.
+                  This applies to staff, suppliers, contractors, guides, drivers, and clients. The company strictly prohibits child sexual exploitation, including any form of child sex tourism. Safeguarding principles are communicated to all stakeholders. Any suspected or reported incidents are addressed through confidential reporting mechanisms and immediate corrective action, in line with Ugandan law.
                 </p>
               </div>
             </section>
@@ -237,7 +237,7 @@ export default function SustainabilityPolicy() {
                   Modus Safaris operates with integrity, transparency, and accountability. All activities comply with Ugandan laws and tourism regulations.
                 </p>
                 <p>
-                  Marketing and communication accurately represent products without greenwashing. Contracts with suppliers and partners are clear, fair, and documented.
+                  Marketing and communication accurately represent products and services without exaggeration or greenwashing. Contracts with suppliers and partners are clear, fair, and documented. Ethical conduct is expected at all levels of operation.
                 </p>
               </div>
             </section>
@@ -249,7 +249,7 @@ export default function SustainabilityPolicy() {
               </div>
               <div className="prose prose-zinc max-w-none text-gray-700 leading-relaxed space-y-4">
                 <p>
-                  Guests are encouraged to actively participate in responsible tourism. Pre-departure information is provided to guide responsible behaviour regarding wildlife ethics and cultural respect.
+                  Guests are encouraged to actively participate in responsible tourism. Pre-departure information is provided to guide responsible behaviour. Clients are educated on wildlife ethics, cultural respect, and environmental protection. Responsible choices during travel are actively promoted. Guest feedback is encouraged to support continuous improvement.
                 </p>
               </div>
             </section>
@@ -261,7 +261,7 @@ export default function SustainabilityPolicy() {
               </div>
               <div className="prose prose-zinc max-w-none text-gray-700 leading-relaxed space-y-4">
                 <p>
-                  Modus Safaris works with suppliers who share its sustainability values. Sustainability performance is considered during selection, and preference is given to partners demonstrating strong local and environmental commitment.
+                  Modus Safaris works with suppliers who share its sustainability values. Environmental, social, and ethical performance is considered during supplier selection. Suppliers are encouraged to improve sustainability performance over time. Sustainability expectations are communicated through agreements and ongoing dialogue. Preference is given to partners demonstrating strong local and environmental commitment.
                 </p>
               </div>
             </section>
@@ -273,7 +273,7 @@ export default function SustainabilityPolicy() {
               </div>
               <div className="prose prose-zinc max-w-none text-gray-700 leading-relaxed space-y-4">
                 <p>
-                  The company monitors sustainability performance across operations and partnerships. Regular reviews assess impacts, and feedback from staff and clients informs improvements.
+                  The company monitors sustainability performance across operations and partnerships. Regular reviews assess environmental, social, ethical, and economic impacts. Feedback from staff, suppliers, and clients informs improvements. Non-compliance with policy requirements is addressed through corrective actions. Continuous improvement is embedded into operational planning and management review processes.
                 </p>
               </div>
             </section>
@@ -285,7 +285,7 @@ export default function SustainabilityPolicy() {
               </div>
               <div className="prose prose-zinc max-w-none text-gray-700 leading-relaxed space-y-4">
                 <p>
-                  This policy is integrated into training and operational procedures. It is publicly available to clients and stakeholders. Management oversight ensures effective implementation. Reviewed at least every two years.
+                  This policy is communicated to all staff and partners upon engagement and integrated into training and operational procedures. The policy is made publicly available to clients and stakeholders. Management is responsible for effective implementation and oversight. The policy is reviewed at least every two years or when significant operational changes occur. Updates are informed by regulatory developments, best practice, and performance outcomes.
                 </p>
                 <div className="mt-12 bg-zinc-50 p-8 rounded-2xl border border-gray-100">
                   <p className="text-sm text-gray-500 mb-2 font-medium uppercase tracking-widest">Formal Approval</p>
