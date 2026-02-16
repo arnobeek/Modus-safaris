@@ -293,11 +293,11 @@ export default function SustainabilityPolicy() {
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <p className="text-xs text-gray-400 uppercase font-bold mb-1">Effective Date</p>
-                      <p className="border-b border-gray-300 pb-2 text-gray-900">February 15, 2026</p>
+                      <p className="border-b border-gray-300 pb-2 text-gray-900">October 10, 2025</p>
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 uppercase font-bold mb-1">Next Review Date</p>
-                      <p className="border-b border-gray-300 pb-2 text-gray-900">February 15, 2028</p>
+                      <p className="border-b border-gray-300 pb-2 text-gray-900">October 10, 2026</p>
                     </div>
                   </div>
                 </div>

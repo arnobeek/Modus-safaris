@@ -55,6 +55,7 @@ function ItineraryDay({ day, isLast }) {
 export default function ExperienceDetail() {
   const { countrySlug, slug, experienceSlug } = useParams()
   const experience = getExperienceBySlug(experienceSlug)
+  const [isFullItineraryOpen, setIsFullItineraryOpen] = useState(false)
 
   if (!experience) {
     return (
@@ -162,9 +163,19 @@ export default function ExperienceDetail() {
 
             {/* Itinerary */}
             <section>
-              <div className="flex items-center gap-3 mb-6">
-                <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
-                <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">Day by Day</span>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <hr className="w-10 h-1 bg-[#3a5a40] border-none" />
+                  <span className="text-sm font-medium tracking-widest text-[#3a5a40] uppercase">Day by Day</span>
+                </div>
+                {experience.detailedItinerary && (
+                  <button
+                    onClick={() => setIsFullItineraryOpen(true)}
+                    className="text-[#3a5a40] font-medium text-sm hover:underline cursor-pointer flex items-center gap-1"
+                  >
+                    View Full Itinerary
+                  </button>
+                )}
               </div>
               <div className="bg-zinc-50 rounded-xl p-4 md:p-6">
                 {experience.itinerary.map((day, index) => (
@@ -175,7 +186,95 @@ export default function ExperienceDetail() {
                   />
                 ))}
               </div>
+              {experience.detailedItinerary && (
+                <div className="mt-6 flex justify-center lg:justify-start">
+                  <button
+                    onClick={() => setIsFullItineraryOpen(true)}
+                    className="px-6 py-3 border-2 border-[#3a5a40] text-[#3a5a40] font-medium hover:bg-[#3a5a40] hover:text-white transition-all duration-300 rounded-lg flex items-center gap-2"
+                  >
+                    <HiOutlineCalendar className="w-5 h-5" />
+                    View Detailed Itinerary
+                  </button>
+                </div>
+              )}
             </section>
+
+            {/* Full Itinerary Modal */}
+            {isFullItineraryOpen && (
+              <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl shadow-2xl flex flex-col relative">
+                  <button 
+                    onClick={() => setIsFullItineraryOpen(false)}
+                    className="absolute top-6 right-6 p-2 hover:bg-zinc-100 rounded-full transition-colors z-10"
+                  >
+                    <HiOutlineX className="w-6 h-6 text-gray-500" />
+                  </button>
+                  
+                  <div className="p-8 md:p-12 overflow-y-auto custom-scrollbar">
+                    <div className="flex items-center gap-3 mb-4">
+                      <hr className="w-12 h-1 bg-[#3a5a40] border-none" />
+                      <span className="text-xs font-bold tracking-[0.2em] text-[#3a5a40] uppercase">Complete Journey</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-8 font-heading italic uppercase italic">
+                      Detailed Itinerary
+                    </h2>
+
+                    <div className="space-y-12">
+                      {experience.detailedItinerary.map((day) => (
+                        <div key={day.day} className="relative pl-12 border-l border-gray-100">
+                          <div className="absolute -left-5 top-0 w-10 h-10 rounded-full bg-[#3a5a40] text-white flex items-center justify-center font-bold text-sm">
+                            {day.day}
+                          </div>
+                          <h3 className="text-xl font-medium text-gray-900 mb-4 font-heading uppercase italic">
+                            {day.title}
+                          </h3>
+                          <div className="space-y-4 text-gray-700 leading-relaxed">
+                            {day.content.map((p, i) => (
+                              <p key={i} className={p.startsWith('•') ? "pl-4 -indent-4" : ""}>
+                                {p}
+                              </p>
+                            ))}
+                          </div>
+
+                          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {day.accommodation && (
+                              <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100">
+                                <p className="text-xs font-bold text-[#3a5a40] uppercase tracking-widest mb-1">Accommodation</p>
+                                <div className="text-sm text-gray-700 space-y-1">
+                                  {typeof day.accommodation === 'string' ? (
+                                    <p>{day.accommodation}</p>
+                                  ) : (
+                                    <>
+                                      <p><span className="font-medium">Mid-range:</span> {day.accommodation.midRange}</p>
+                                      <p><span className="font-medium">Luxury:</span> {day.accommodation.luxury}</p>
+                                    </>
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                            {day.meals && (
+                              <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-100">
+                                <p className="text-xs font-bold text-[#3a5a40] uppercase tracking-widest mb-1">Meal Plan</p>
+                                <p className="text-sm text-gray-700">{day.meals}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-12 flex justify-center">
+                      <button 
+                        onClick={() => setIsFullItineraryOpen(false)}
+                        className="px-10 py-4 bg-[#3a5a40] text-white font-medium hover:scale-105 transition-all duration-300 shadow-lg shadow-[#3a5a40]/20 uppercase tracking-widest text-sm"
+                      >
+                        Close Detailed View
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Gallery */}
             {experience.gallery.length > 0 && (
@@ -214,7 +313,7 @@ export default function ExperienceDetail() {
                 Book This Experience
               </Link>
               <p className="text-sm text-gray-500 text-center">
-                Subject to <Link to="/terms-and-conditions#cancellations" className="text-[#3a5a40] font-medium underline">Cancellation Policy</Link>
+                Subject to <Link to="/terms-and-conditions#cancellations" className="text-[#3a5a40] font-medium underline">Booking Terms</Link>
               </p>
 
               <hr className="border-gray-200" />

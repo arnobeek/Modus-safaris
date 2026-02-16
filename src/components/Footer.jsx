@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaLinkedinIn, FaFacebook } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { IoMailOutline } from "react-icons/io5";
@@ -22,9 +22,9 @@ export default function Footer() {
                             </div>
                         </a>
 
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <a href="https://wa.me/256763174100" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                             <div className='w-10 h-10 border border-white/30 flex items-center justify-center rounded-full hover:bg-white hover:text-[#3a5a40] transition-all duration-300'>
-                                <FaFacebookF size={18} />
+                                <FaWhatsapp size={18} />
                             </div>
                         </a>
                         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
