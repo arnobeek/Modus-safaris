@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useSearchParams, Link } from "react-router-dom"
 import { FormInput, FormCheckboxGroup, CheckboxButton, FormTextarea } from "./FormField"
-import { experiences, getExperienceBySlug } from "../data/experiences"
+import { getExperienceBySlug } from "../data/experiences"
 import { sendBookingData } from "../services/emailService"
 import { 
   IoTimeOutline, 
@@ -13,6 +13,12 @@ import {
   IoCashOutline, 
   IoCreateOutline 
 } from "react-icons/io5"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
+import PhoneInput from "react-phone-number-input"
+import "react-phone-number-input/style.css"
+import Select from "react-select"
+import { nationalityOptions } from "../data/nationalities"
 
 export default function BookingForm() {
   const [searchParams] = useSearchParams()
@@ -23,10 +29,10 @@ export default function BookingForm() {
   const [submitError, setSubmitError] = useState("")
   const [activeStep, setActiveStep] = useState(1)
 
+  const [selectedDate, setSelectedDate] = useState(null)
+
   const [form, setForm] = useState({
     duration: "",
-    years: [],
-    months: [],
     experiences: [],
     countries: [],
     travelingWith: "",
@@ -36,7 +42,7 @@ export default function BookingForm() {
     fullName: "",
     email: "",
     phone: "",
-    nationality: "",
+    nationality: null,
     notes: "",
   })
 
@@ -78,8 +84,7 @@ export default function BookingForm() {
   const validate = () => {
     const newErrors = {}
     if (!form.duration) newErrors.duration = "Please select travel duration"
-    if (form.years.length === 0) newErrors.year = "Please select a year"
-    if (form.months.length === 0) newErrors.month = "Please select at least one month"
+    if (!selectedDate) newErrors.date = "Please select a travel date"
     if (form.experiences.length === 0) newErrors.experiences = "Please select at least one experience"
     if (form.countries.length === 0) newErrors.countries = "Please select a country"
     if (!form.travelingWith) newErrors.travelingWith = "Please tell us who you're traveling with"
@@ -92,7 +97,8 @@ export default function BookingForm() {
     if (!form.budget) newErrors.budget = "Please select a budget range"
     if (!form.fullName.trim()) newErrors.fullName = "Required"
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Valid email required"
-    if (!form.phone.trim()) newErrors.phone = "Required"
+    if (!form.phone || form.phone.length < 10) newErrors.phone = "Valid phone required"
+    if (!form.nationality) newErrors.nationality = "Required"
     
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -123,8 +129,8 @@ export default function BookingForm() {
       // Format data for email service
       const emailData = {
         ...form,
-        years: form.years.join(", "),
-        months: form.months.join(", "),
+        travelDate: selectedDate?.toLocaleDateString() || "",
+        nationality: form.nationality?.label || "",
         experiences: form.experiences.join(", "),
         countries: form.countries.join(", "),
       }
@@ -216,36 +222,73 @@ export default function BookingForm() {
               </span>
               <div className="space-y-1">
                 <p className="text-[#3a5a40] text-[10px] font-black tracking-[0.2em] uppercase opacity-70">Step 02</p>
-                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">Which year and month suits you best?</h3>
+                <h3 className="text-2xl md:text-3xl font-medium text-gray-900 text-left">When would you like to travel?</h3>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] space-y-10">
-              <div className="space-y-8">
-                <FormCheckboxGroup label="Preferred Year" error={errors.year} columns="grid-cols-3">
-                  {["2026", "2027"].map((y) => (
-                    <CheckboxButton
-                      key={y}
-                      id={`year-${y}`}
-                      label={y}
-                      checked={form.years.includes(y)}
-                      onChange={() => toggleArrayItem("years", y)}
-                    />
-                  ))}
-                </FormCheckboxGroup>
-                <FormCheckboxGroup label="Preferred Month(s)" error={errors.month} columns="grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-                  {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((m) => (
-                    <CheckboxButton
-                      key={m}
-                      id={`month-${m}`}
-                      label={m}
-                      checked={form.months.includes(m)}
-                      onChange={() => toggleArrayItem("months", m)}
-                    />
-                  ))}
-                </FormCheckboxGroup>
-              </div>
-              {form.years.length > 0 && form.months.length > 0 && activeStep === 2 && (
-                <div className="flex justify-start pt-8 border-t border-zinc-50">
+            <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] flex flex-col items-center">
+              <style>{`
+                .react-datepicker-wrapper { width: 100%; }
+                .react-datepicker__input-container { width: 100%; }
+                .react-datepicker {
+                  border: none;
+                  font-family: inherit;
+                  background-color: white;
+                  font-size: 1rem;
+                }
+                .react-datepicker__header {
+                  background-color: white;
+                  border-bottom: 1px solid #f4f4f5;
+                  padding-top: 1rem;
+                }
+                .react-datepicker__day-name {
+                  color: #a1a1aa;
+                  font-weight: 500;
+                  width: 2.5rem;
+                }
+                .react-datepicker__day {
+                  width: 2.5rem;
+                  height: 2.5rem;
+                  line-height: 2.5rem;
+                  border-radius: 9999px;
+                  margin: 0.2rem;
+                }
+                .react-datepicker__day--selected, 
+                .react-datepicker__day--in-selecting-range, 
+                .react-datepicker__day--in-range {
+                  background-color: #3a5a40 !important;
+                  color: white !important;
+                }
+                .react-datepicker__day--keyboard-selected {
+                  background-color: #3a5a4020 !important;
+                  color: #3a5a40 !important;
+                }
+                .react-datepicker__day--disabled {
+                  opacity: 0.2;
+                }
+                .react-datepicker__navigation {
+                  top: 1rem;
+                }
+              `}</style>
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => {
+                  setSelectedDate(date);
+                  if (errors.date) setErrors(prev => ({ ...prev, date: "" }))
+                }}
+                inline
+                monthsShown={ window.innerWidth > 768 ? 2 : 1 }
+                minDate={new Date()}
+                dateFormat="MMMM d, yyyy"
+              />
+              {selectedDate && (
+                <p className="text-sm text-[#3a5a40] font-medium mt-4 bg-[#3a5a40]/5 px-5 py-2.5 rounded-full">
+                  Selected: {selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+              )}
+              {errors.date && <p className="text-red-500 text-sm mt-4 font-medium bg-red-50 px-4 py-2 rounded-full">{errors.date}</p>}
+
+              {selectedDate && activeStep === 2 && (
+                <div className="flex justify-start w-full pt-8 mt-8 border-t border-zinc-50">
                   <button 
                     type="button" 
                     onClick={() => handleNext(3)}
@@ -450,7 +493,7 @@ export default function BookingForm() {
             </div>
             <div className="bg-white p-8 rounded-[2.5rem] border border-zinc-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]">
               <FormCheckboxGroup label="" error={errors.budget} columns="grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-                {["Under $1,500", "$1,500 – $2,500", "$2,500 – $4,000", "$4,000 – $6,000", "$6,000+"].map((b) => (
+                {["Under $3,000", "$3,000 – $5,000", "$5,000 – $10,000", "$10,000 – $15,000", "$15,000+"].map((b) => (
                   <CheckboxButton
                     key={b}
                     id={`budget-${b}`}
@@ -507,22 +550,68 @@ export default function BookingForm() {
                   error={errors.email}
                   required
                 />
-                <FormInput
-                  label="Phone Number"
-                  type="tel"
-                  placeholder="e.g. +1 555 000 0000"
-                  value={form.phone}
-                  onChange={(e) => updateField("phone", e.target.value)}
-                  error={errors.phone}
-                  required
-                />
-                <FormInput
-                  label="Nationality"
-                  placeholder="e.g. American"
-                  value={form.nationality}
-                  onChange={(e) => updateField("nationality", e.target.value)}
-                  error={errors.nationality}
-                />
+                
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-gray-700">Phone Number <span className="text-red-500">*</span></label>
+                  <PhoneInput
+                    international
+                    countryCallingCodeEditable={false}
+                    placeholder="Enter phone number"
+                    value={form.phone}
+                    onChange={(value) => updateField("phone", value || "")}
+                    defaultCountry="UG"
+                    className={`
+                      flex items-center gap-2 phone-input-container
+                      ${errors.phone ? "border-red-300 ring-red-200" : "border-gray-200 focus-within:ring-[#3a5a40]/20 focus-within:border-[#3a5a40]"}
+                      bg-zinc-50 border rounded-2xl px-5 py-4 w-full transition-all duration-200
+                    `}
+                  />
+                  <style>{`
+                    .PhoneInputInput {
+                      background: transparent;
+                      border: none;
+                      outline: none;
+                      font-size: 1rem;
+                      color: #1f2937;
+                      width: 100%;
+                    }
+                    .PhoneInputCountry {
+                      margin-right: 0.5rem;
+                    }
+                    .PhoneInputCountrySelectArrow {
+                      margin-left: 0.25rem;
+                    }
+                  `}</style>
+                  {errors.phone && <p className="text-red-500 text-xs mt-1 font-medium">{errors.phone}</p>}
+                </div>
+
+                <div className="space-y-2">
+                  <label className="block text-sm font-medium text-gray-700">Nationality <span className="text-red-500">*</span></label>
+                  <Select
+                    options={nationalityOptions}
+                    value={form.nationality}
+                    onChange={(val) => updateField("nationality", val)}
+                    placeholder="Select nationality..."
+                    styles={{
+                      control: (base, state) => ({
+                        ...base,
+                        borderRadius: '1rem',
+                        padding: '0.5rem',
+                        backgroundColor: '#fafafa',
+                        borderColor: errors.nationality ? '#fca5a5' : '#e4e4e7',
+                        boxShadow: state.isFocused ? '0 0 0 2px rgba(58, 90, 64, 0.2)' : 'none',
+                        '&:hover': { borderColor: '#3a5a40' }
+                      }),
+                      option: (base, state) => ({
+                         ...base,
+                         backgroundColor: state.isSelected ? '#3a5a40' : state.isFocused ? '#3a5a4010' : 'white',
+                         color: state.isSelected ? 'white' : '#374151',
+                         cursor: 'pointer'
+                      })
+                    }}
+                  />
+                  {errors.nationality && <p className="text-red-500 text-xs mt-1 font-medium">{errors.nationality}</p>}
+                </div>
               </div>
 
               <FormTextarea

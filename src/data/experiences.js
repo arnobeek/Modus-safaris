@@ -2480,7 +2480,7 @@ export const experiences = [
             "Tips and gratuities",
             "Laundry services"
         ],
-        featured: false
+        featured: true
     }
 ]
 

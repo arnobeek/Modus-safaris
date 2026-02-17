@@ -289,7 +289,7 @@ export default function SustainabilityPolicy() {
                 </p>
                 <div className="mt-12 bg-zinc-50 p-8 rounded-2xl border border-gray-100">
                   <p className="text-sm text-gray-500 mb-2 font-medium uppercase tracking-widest">Formal Approval</p>
-                  <p className="text-gray-900 font-bold mb-4">Approved by: Management, Modus Safaris (U) Limited</p>
+                  <p className="text-gray-900 font-bold mb-4">Approved by: Management, Modus Safaris (UG) Limited</p>
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <p className="text-xs text-gray-400 uppercase font-bold mb-1">Effective Date</p>
