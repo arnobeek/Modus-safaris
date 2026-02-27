@@ -45,6 +45,7 @@ export default function CountryDetail() {
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDescription} />
+        <link rel="canonical" href={`https://modussafaris.com/destinations/${countrySlug}`} />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:image" content={country.heroImage} />

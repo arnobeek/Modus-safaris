@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Static Pages -->
+  <url>
+    <loc>https://modussafaris.com/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/destinations</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/stories</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/about</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/sustainability</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/sustainability/policy</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/terms-and-conditions</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/privacy</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/responsible-travel</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/health-and-safety</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/supplier-charter</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/code-of-conduct</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/child-protection-policy</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/booking</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Country Pages -->
+  <url>
+    <loc>https://modussafaris.com/destinations/uganda</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/destinations/kenya</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/destinations/tanzania</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://modussafaris.com/destinations/rwanda</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Destination Pages -->
+  <!-- Uganda -->
+  <url><loc>https://modussafaris.com/destinations/uganda/bwindi-impenetrable-forest</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/murchison-falls</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/queen-elizabeth</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/kidepo-valley</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/kibale-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/lake-mburo</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/semuliki-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/mgahinga-gorilla</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/kampala-entebbe</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/sipi-falls</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/moroto-karamoja</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/lake-bunyonyi</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/ziwa-rhino-sanctuary</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/mount-elgon</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/semuliki</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/rwenzori-mountains</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Kenya -->
+  <url><loc>https://modussafaris.com/destinations/kenya/masai-mara</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/amboseli</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/tsavo-east</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/tsavo-west</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/samburu-national-reserve</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/lake-nakuru</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/ol-pejeta</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/mount-kenya</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/aberdare-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/hells-gate</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/nairobi-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Tanzania -->
+  <url><loc>https://modussafaris.com/destinations/tanzania/serengeti</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/ngorongoro</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/tarangire</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/lake-manyara</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/selous-game-reserve</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/ruaha-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/kilimanjaro-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/mikumi-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Rwanda -->
+  <url><loc>https://modussafaris.com/destinations/rwanda/volcanoes-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/rwanda/akagera-national-park</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/rwanda/nyungwe-forest</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modussafaris.com/destinations/rwanda/gishwati-mukura</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Experience Pages -->
+  <!-- Tanzania -->
+  <url><loc>https://modussafaris.com/destinations/tanzania/serengeti/serengeti-migration-safari</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/tarangire/tarangire-manyara-gems</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/selous-game-reserve/southern-tanzania-safari</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/tanzania/kilimanjaro-national-park/kilimanjaro-trek</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Kenya -->
+  <url><loc>https://modussafaris.com/destinations/kenya/masai-mara/masai-mara-explorer</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/amboseli/amboseli-kilimanjaro-views</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/samburu-national-reserve/samburu-northern-frontier</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/tsavo-west/tsavo-coast-safari</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/kenya/lake-nakuru/rift-valley-explorer</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Rwanda -->
+  <url><loc>https://modussafaris.com/destinations/rwanda/volcanoes-national-park/rwanda-gorillas-golden-monkeys</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/rwanda/akagera-national-park/akagera-big-five</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/rwanda/nyungwe-forest/nyungwe-canopy-chimps</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Uganda -->
+  <url><loc>https://modussafaris.com/destinations/uganda/kampala-entebbe/kampala-entebbe-city-tour</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/kidepo-valley/uganda-wildlife-culture-14-days</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/bwindi-impenetrable-forest/ultimate-uganda-adventure-13-days</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/bwindi-impenetrable-forest/uganda-safari-primates-12-days</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/murchison-falls/uganda-wildlife-safari-8-days</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/mgahinga-gorilla/uganda-adventure-safari-primates-7-days</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://modussafaris.com/destinations/uganda/bwindi-impenetrable-forest/uganda-gorilla-trekking-4-days</loc><lastmod>2026-02-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>

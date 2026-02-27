@@ -124,6 +124,30 @@ export default function Home() {
       <Helmet>
         <title>{SEO.title}</title>
         <meta name="description" content={SEO.description} />
+        <link rel="canonical" href="https://modussafaris.com/" />
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "TravelAgency",
+            "name": "Modus Safaris",
+            "url": "https://modussafaris.com",
+            "logo": "https://modussafaris.com/logo.png",
+            "description": "Luxury East Africa safari company specializing in gorilla trekking, wildlife safaris, and tailor-made journeys.",
+            "areaServed": "East Africa",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kampala",
+              "addressRegion": "Central",
+              "addressCountry": "UG",
+              "streetAddress": "Mirage Complex, Second Floor, RM MC2 - 05, Kitintale",
+              "postalCode": "115592"
+            },
+            "telephone": "+256763174100",
+            "email": "info@modussafaris.com"
+          }
+          `}
+        </script>
         <meta property="og:type" content="website" />
         <meta property="og:title" content={SEO.title} />
         <meta property="og:description" content={SEO.description} />

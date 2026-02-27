@@ -28,6 +28,7 @@ export default function SupplierCharter() {
           name="description"
           content="Modus Safaris Supplier Sustainability Charter. Our standards for accommodation partners, transport providers, and community partners in Uganda."
         />
+        <link rel="canonical" href="https://modussafaris.com/supplier-charter" />
       </Helmet>
 
       {/* Header */}

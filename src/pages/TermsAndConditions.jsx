@@ -41,6 +41,7 @@ export default function TermsAndConditions() {
           name="description"
           content="Official Terms, Conditions, Cancellation & Refund Policy for Modus Safaris (UG) Limited."
         />
+        <link rel="canonical" href="https://modussafaris.com/terms-and-conditions" />
       </Helmet>
 
       {/* Header */}

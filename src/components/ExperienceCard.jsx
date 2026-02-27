@@ -13,7 +13,7 @@ export default function ExperienceCard({ experience }) {
         <div className="relative overflow-hidden aspect-[4/3]">
           <img
             src={heroImage || "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70"}
-            alt={title}
+            alt={`${title} - ${country} safari experience`}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             onError={(e) => {

@@ -40,6 +40,7 @@ export default function SustainabilityPolicy() {
       <Helmet>
         <title>Sustainability & Operational Policy | Modus Safaris</title>
         <meta name="description" content="Formal Sustainability, Responsible Tourism & Operational Policy of Modus Safaris (UG) Limited." />
+        <link rel="canonical" href="https://modussafaris.com/sustainability/policy" />
       </Helmet>
 
       {/* Hero */}

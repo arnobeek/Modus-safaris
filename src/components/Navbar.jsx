@@ -143,7 +143,7 @@ export default function Navbar() {
         className={`fixed flex items-center justify-between px-6 md:px-10 w-full shadow py-2.5 z-50 transition-all duration-500 ${headerBg}`}
       >
         <Link to="/" className="flex items-center shrink-0" onClick={closeMenu}>
-          <img src={logo} alt="Modus" className="w-20" />
+          <img src={logo} alt="Modus Safaris Logo" className="w-20" />
           <h1 className="text-2xl font-extrabold text-[#3a5a40]"></h1>
         </Link>
 

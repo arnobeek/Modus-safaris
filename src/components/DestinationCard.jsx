@@ -26,7 +26,7 @@ export default function DestinationCard({ destination }) {
       <div className="overflow-hidden aspect-4/3 relative">
         <img
           src={displayImage}
-          alt={name}
+          alt={`${name} safari destination in ${location}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           onError={(e) => {
             e.target.src = FALLBACK_IMAGE

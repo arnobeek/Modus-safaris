@@ -62,6 +62,7 @@ export default function About(){
             <Helmet>
                 <title>{SEO.title}</title>
                 <meta name="description" content={SEO.description} />
+                <link rel="canonical" href="https://modussafaris.com/about" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={SEO.title} />
                 <meta property="og:description" content={SEO.description} />

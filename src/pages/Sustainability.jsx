@@ -16,6 +16,7 @@ export default function Sustainability() {
       <Helmet>
         <title>{SEO.title}</title>
         <meta name="description" content={SEO.description} />
+        <link rel="canonical" href="https://modussafaris.com/sustainability" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={SEO.title} />
         <meta property="og:description" content={SEO.description} />
@@ -86,7 +87,7 @@ export default function Sustainability() {
                 </ul>
             </div>
             <div className="h-80 rounded-2xl overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1699078109661-0269200668ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZW52aXJvbm1lbnRhbCUyMHByb3RlY3Rpb258ZW58MHx8MHx8fDA%3D" alt="Landscape" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1699078109661-0269200668ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZW52aXJvbm1lbnRhbCUyMHByb3RlY3Rpb258ZW58MHx8MHx8fDA%3D" alt="East African landscape showing environmental conservation efforts" className="w-full h-full object-cover" />
             </div>
         </div>
       </section>
@@ -95,7 +96,7 @@ export default function Sustainability() {
       <section className="px-6 md:px-12 lg:px-20 py-16 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
             <div className="order-2 md:order-1 h-80 rounded-2xl overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=70" alt="Lion" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=70" alt="Lion resting in the African savanna wildlife conservation area" className="w-full h-full object-cover" />
             </div>
             <div className="order-1 md:order-2">
                 <div className="flex items-center gap-3 mb-4">
@@ -150,7 +151,7 @@ export default function Sustainability() {
                 </ul>
             </div>
             <div className="h-80 rounded-2xl overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1656278345231-e6545c47508a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNvbW11bml0eSUyMHVnYW5kYXxlbnwwfHwwfHx8MA%3D%3D" alt="Community" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1656278345231-e6545c47508a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGNvbW11bml0eSUyMHVnYW5kYXxlbnwwfHwwfHx8MA%3D%3D" alt="Local Ugandan community members participating in sustainable tourism" className="w-full h-full object-cover" />
             </div>
         </div>
       </section>

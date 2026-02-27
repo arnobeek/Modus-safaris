@@ -17,7 +17,7 @@ export default function CountryCard({ country }) {
       <div className="absolute inset-0">
         <img
           src={heroImage || "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200"}
-          alt={name}
+          alt={`${name} safari destination`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           onError={(e) => {
             e.target.src = "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200"

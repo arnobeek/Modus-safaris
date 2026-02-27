@@ -16,6 +16,7 @@ export default function Destinations() {
       <Helmet>
         <title>{SEO.title}</title>
         <meta name="description" content={SEO.description} />
+        <link rel="canonical" href="https://modussafaris.com/destinations" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={SEO.title} />
         <meta property="og:description" content={SEO.description} />
